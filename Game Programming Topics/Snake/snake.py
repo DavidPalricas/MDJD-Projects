@@ -1,11 +1,16 @@
 import pygame
 
+# The size of the snake and food cubes
+from consts import SCALE 
+
 # This is the snake class 
 class Snake:
     #The constructor of the class initializes the snake with its body, direction and length
     def __init__(self) :
         # The snake body is 3 red cubes
         self.snake_body = [(40, 20), (39, 20), (38, 20)]
+
+        # The snake direction is initially to the right
         self.snake_direction = (1, 0)
         self.snake_length = 3
 
@@ -23,6 +28,7 @@ class Snake:
     
     # The move method moves the snake
     def move(self):
+        #Inserts a new head position to the snake body effectively moving the snake in the direction specified
         self.snake_body[0:0] = [
         (self.snake_body[0][0] + self.snake_direction[0], self.snake_body[0][1] + self.snake_direction[1])
         ]
@@ -31,11 +37,11 @@ class Snake:
             self.snake_body.pop()
     
     # The draw method draws the snake in the pygame window
-    def draw(self,display,SCALE,position):
+    def draw(self,display,position):
         x = position[0]
         y = position[1]
 
-        pygame.draw.rect(display, "red", (SCALE * x, SCALE * y, SCALE, SCALE))
+        pygame.draw.rect(display, "green", (SCALE * x, SCALE * y, SCALE, SCALE))
         
 
         
