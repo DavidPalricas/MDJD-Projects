@@ -17,10 +17,6 @@ display = pygame.display.set_mode((SCALE * WIDTH, SCALE * HEIGHT))
 # The pygame clock
 clock = pygame.time.Clock()
 
-# The snake and food objects
-snake = s.Snake()
-food = f.Food((random.randrange(WIDTH), random.randrange(HEIGHT)))
-
 # The update_window function updates the game window
 def update_window():
     pygame.display.flip()
@@ -32,8 +28,8 @@ def quit_game():
     running = False
 
 # The check_snake_colisions function checks for snake collisions (wall,self and food collisions)
-def check_snake_colisions():
-    global food
+def check_snake_colisions(snake,food):
+  
     snake_body = snake.get_body()
     for x, y in snake_body:
         snake.draw(display,(x,y))
@@ -47,7 +43,7 @@ def check_snake_colisions():
             print("Sent")
             ev = pygame.event.Event(GAME_EVENT, {'txt': "dammmm"})
             pygame.event.post(ev)
-            food = f.Food((random.randrange(WIDTH), random.randrange(HEIGHT)))
+            food.new_food()
 
         if x not in range(WIDTH) or y not in range(HEIGHT):
             print("Snake crashed against the wall")
@@ -58,12 +54,12 @@ def check_snake_colisions():
             quit_game()    
 
 # The update_map function updates the game window by filling it with a black color and drawing the food
-def update_map():
+def update_map(food):
      display.fill("black")
      food.draw(display)
 
 # The event_listener function listens for events (keyboard and quit events) and acts accordingly
-def event_listener():
+def event_listener(snake):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit_game()
@@ -88,12 +84,17 @@ def event_listener():
 # This function is responsible for running the game loop
 # It listens for events, updates the game state, checks for collisions and updates the game window
 def main():
+
+    # The snake and food objects
+    snake = s.Snake()
+    food = f.Food()
+
     while running:
-        event_listener()
+        event_listener(snake)
 
-        update_map()
+        update_map(food)
 
-        check_snake_colisions()
+        check_snake_colisions(snake,food)
  
         snake.move()
 
