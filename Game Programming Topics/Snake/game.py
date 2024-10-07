@@ -4,15 +4,14 @@ import pygame as pg
 import snake as s
 import apple as f
 import score as sc
+import inputhandler as inputh
 
 # The game constants
 # SCALE : Size of the snakes and apples
 # WIDTH, HEIGHT : Width and Height of the game window
 # GAME_EVENT : Custom event type
-# ARROW_KEYS : The keys the snake can use to move (Arrow keys)
-# WASD_KEYS : The keys the snake can use to move (WASD keys)
 # NUMBER_OF_PLAYERS : Number of players
-from consts import SCALE,WIDTH,HEIGHT,GAME_EVENT,NUMBER_OF_PLAYERS,WASD_KEYS,ARROW_KEYS
+from consts import SCALE,WIDTH,HEIGHT,GAME_EVENT,NUMBER_OF_PLAYERS
 
 # This variable is used to control the game loop
 running = True
@@ -69,13 +68,14 @@ def event_listener(snakes):
         if event.type == pg.QUIT:
             quit_game()
         elif event.type == pg.KEYDOWN:
-            for i in range(0,len(snakes)):
-                if i % 2 == 0 and event.key in WASD_KEYS:
-                    snakes[i].change_direction(event.key)
+            input_handler = inputh.InputHandler()
 
-                elif i %2 != 0 and event.key in ARROW_KEYS:
-                    snakes[i].change_direction(event.key)
-               
+            for i in range(0,len(snakes)):
+                input_handler.set_command(i)
+                command = input_handler.handle_input(event.key)
+
+                if command != None:
+                    command.execute(snakes[i])
 
         elif event.type == GAME_EVENT:
             print(event.txt)
@@ -98,6 +98,7 @@ def main():
     for  _ in range(0,NUMBER_OF_PLAYERS):
         snakes.append(s.Snake())
         apples.append(f.Apple())
+
 
     while running:
         event_listener(snakes)

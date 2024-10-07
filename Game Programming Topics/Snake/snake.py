@@ -27,27 +27,11 @@ class Snake(ent.Entity):
         self.snake_direction = RIGHT
 
         self.snake_length = 3
-
-    # The change_direction method changes the snake's direction 
-    # Based on the key pressed
-    def change_direction(self,key):   
-        coordinates = ()
-        match key:
-            case pg.K_UP | pg.K_w:
-                coordinates = UP
-
-            case pg.K_DOWN | pg.K_s:
-                coordinates= DOWN
-
-            case pg.K_LEFT | pg.K_a:
-                pg.K_a
-                coordinates = LEFT
-
-            case _:
-                coordinates = RIGHT
-
-        self.snake_direction = coordinates
     
+
+    def change_direction(self,new_direction):
+        self.snake_direction = new_direction
+
     # The increase_length method increases the snake's length
     def increase_length(self):
         self.snake_length += 1

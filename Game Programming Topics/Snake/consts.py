@@ -16,9 +16,3 @@ RIGHT = (1, 0)
 LEFT = (-1, 0)
 UP = (0, -1)
 DOWN = (0, 1)
-
-# The keys the snake can use to move (Arrow keys)
-ARROW_KEYS = [pg.K_UP,pg.K_DOWN,pg.K_LEFT,pg.K_RIGHT]
-
-# The keys the snake can use to move (WASD keys)
-WASD_KEYS = [pg.K_w,pg.K_s,pg.K_a,pg.K_d]
