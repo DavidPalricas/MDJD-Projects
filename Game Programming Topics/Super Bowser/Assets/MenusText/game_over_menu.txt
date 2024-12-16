@@ -1,0 +1,11 @@
+Game Over
+
+You failed to kidnap Princess Peach.
+Mario is laughing at you!  
+
+The Mushroom Kingdom is safe for now.  
+
+But do not give up! The Princess will not stay safe forever.  
+
+Press Enter to Play Again or Escape to exit the game.
+

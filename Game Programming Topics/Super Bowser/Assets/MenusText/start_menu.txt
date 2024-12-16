@@ -1,0 +1,13 @@
+Super Bowser
+
+Your mission is to kidnap Princess Peach before time runs out.
+
+But watch out! Mario has sent a horde of Kirbies to stop you.
+
+Controls:
+    Move Left -> Left key or A key
+    Move Right -> Right key or D key
+    Jump -> W key, Up key or Space key
+    Exit -> Escape Key
+
+Press Enter to start.

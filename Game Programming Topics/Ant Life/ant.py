@@ -1,6 +1,7 @@
 import pygame as pg
 import random
 import finite_state_machine as fsm
+from consts import WINDOW_WIDTH, WINDOW_HEIGHT
 
 class Ant():
     """ The Ant class is responsible for managing the ant in the game.
@@ -15,7 +16,7 @@ class Ant():
             In the constructor, the ant sprite is created, the finite state machine is initialized, and the reproduce flag is set to False.
         """
 
-        self.ant = pg.Rect(0, 0, 10, 10)
+        self.ant = pg.Rect(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, 10, 10)
 
         self.fsm = fsm.FSM(self.set_states(),self.set_transitions())
 
@@ -73,14 +74,14 @@ class Ant():
             It also checks the current state of the ant by calling the check_ant_state method.
             And if the ant has found poison, it transitions to the dead state.
         """
-
-        move_horizontal = 5 if random.randint(0,1) == 1 else -5
-        move_vertical = 5 if random.randint(0,1) == 1 else -5
         
-        if  self.cannot_move_horizontally(self.ant.x + move_horizontal, game_map):
+        move_horizontal = random.choice([-5, 0, 5])
+        move_vertical = random.choice([-5, 0, 5])
+        
+        if  self.cannot_move(self.ant.x + move_horizontal, game_map):
             move_horizontal = 0
         
-        if self.cannot_move_vertically(self.ant.y + move_vertical, game_map):
+        if self.cannot_move(self.ant.y + move_vertical, game_map):
             move_vertical = 0
 
         self.ant.x += move_horizontal
@@ -91,34 +92,20 @@ class Ant():
 
         if (self.found_element(game_map,"poison")):
             self.fsm.update("found_poison",self)
-   
-    def cannot_move_horizontally(self,x,game_map):
+  
+    def cannot_move(self,coordinate,game_map):
 
         """ The cannot_move_horizontal method checks if the ant next move does not go out of the game map horizontally.
             
             Args:
-                - x: The x-coordinate of the ant.
+                - coordinate: The coordinate(x or y) of the ant.
                 - game_map: The game map.
             
             Returns:
                 - bool: A flag indicating whether the ant cannot move horizontally.
         """
-        return x <= 0 or x >= game_map.map_width 
-  
-    
-    def cannot_move_vertically(self,y,game_map):
-        """ The cannot_move_vertical method checks if the ant next move does not go out of the game map vertically.
-            
-            Args:
-                - y: The y-coordinate of the ant.
-                - game_map: The game map.
-            
-            Returns:
-                - bool: A flag indicating whether the ant cannot move vertically.
-        """
-
-        return y <= 0 or y >= game_map.map_height
-    
+        return coordinate <= 0 or coordinate >= game_map.map_width 
+   
     def check_ant_state(self,game_map):
         """ The check_ant_state method checks the current state of the ant and updates it based on the rules of the game.
             If the ant is in the forage state and finds sugar, the ant transitions to the go_home state.
@@ -157,9 +144,9 @@ class Ant():
             - bool: A flag indicating whether the ant has found the element.
         """
 
-        sugar = [element for element in game_map.environment_elements if element[1] == element_name]
+        elements = [element for element in game_map.environment_elements if element[1] == element_name]
 
-        for element in sugar:
+        for element in elements:
             if self.ant.colliderect(element[0]):
 
                 if element_name != "home":

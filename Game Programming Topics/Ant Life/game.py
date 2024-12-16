@@ -1,6 +1,7 @@
 import pygame as pg
 from game_map import GameMap
 from ant import Ant
+from consts import WINDOW_WIDTH, WINDOW_HEIGHT
 
 def update_display(window, clock,game_map,ants):
     """ The update_display function updates the display of the game.
@@ -83,7 +84,7 @@ def setup_pygame():
             - all_sprites: The group of all the sprites in the game.
     """
     pg.init()
-    window = pg.display.set_mode((800, 600))
+    window = pg.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     pg.display.set_caption("Ant Life")
     clock = pg.time.Clock()
 

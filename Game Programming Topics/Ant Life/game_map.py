@@ -1,5 +1,6 @@
 import pygame as pg
 import random
+from consts import WINDOW_WIDTH, WINDOW_HEIGHT
 class GameMap():
 
     def __init__(self) -> None:
@@ -12,7 +13,7 @@ class GameMap():
 
         self.sugar_number = 20
 
-        self.water_number = 5
+        self.water_number = 10
 
         self.poison_number = 15
 
@@ -39,7 +40,7 @@ class GameMap():
 
             
     def draw_ants_home(self,window):
-        home = pg.Rect(0,0,100,100)
+        home = pg.Rect(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2,100,100)
         pg.draw.rect(window,(101, 67, 33),home)
         self.environment_elements.append((home,"home",(101, 67, 33)))
 
@@ -48,7 +49,7 @@ class GameMap():
         for i in range (self.sugar_number):
 
             if i <= self.water_number:
-                self.create_environment_element(window,(50,50),(0,0,255),"water")
+                self.create_environment_element(window,(15,15),(0,0,255),"water")
 
             if i <= self.poison_number:
                 self.create_environment_element(window,(15,15),(160,32,240),"poison")
