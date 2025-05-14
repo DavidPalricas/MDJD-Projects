@@ -1,1 +1,6 @@
-__pycache__
+**/__pycache__/
+**/.env
+
+# IntelligentSystemsII
+IntelligentSystemsII/StudyOfToolsII/saved_policy
+IntelligentSystemsII/StudyOfToolsII/logs
