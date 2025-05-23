@@ -1,0 +1,92 @@
+version : "3.1"
+
+nlu:
+- intent: ask_tv_show_suggestions
+  examples: |
+    - Can you suggest me some TV shows?
+    - What are some good TV shows to watch?
+    - Recommend me a TV show.
+    - I need suggestions for TV shows.
+    - What TV shows do you recommend?
+    - Suggest me a TV show to watch.
+    - What TV shows are popular right now?
+    - Can you give me some TV show recommendations?
+    - What are the best TV shows to watch?
+    - Give me some TV shows to watch.
+    - Can you suggest me some [comedy](media_genre) TV shows?  
+    - Recommend me a [thriller](media_genre) TV show.  
+    - I need suggestions for [fantasy](media_genre) TV shows.  
+    - What [animation](media_genre) TV shows do you recommend?  
+    - I prefer [comedy](media_genre) TV shows.  
+    - I love [horror](media_genre) series.  
+    - I am a fan of [animation](media_genre) TV shows.  
+    - I like [crime](media_genre) series. 
+    - Give me [action](media_genre) TV shows.
+
+- intent: ask_movie_suggestions
+  examples: |
+    - Can you suggest me some movies?
+    - What are some good movies to watch?
+    - Recommend me a movie.
+    - I need suggestions for movies.
+    - What movies do you recommend?
+    - Suggest me a movie to watch.
+    - What movies are popular right now?
+    - Can you give me some movie recommendations?
+    - What are the best movies to watch?
+    - Give me some movies to watch. 
+    - Can you suggest me some [action](media_genre) movies?  
+    - Recommend me a [romantic](media_genre) movie.  
+    - I need suggestions for [sci-fi](media_genre) movies.  
+    - What [historical](media_genre) movies do you recommend?  
+    - I like [action](media_genre) movies.  
+    - I enjoy [drama](media_genre) films.  
+    - I am a fan of [musical](media_genre) films.  
+    - I prefer [family](media_genre) movies.  
+    - Give me [comedy](media_genre) movies.
+  
+- intent: provide_media_genre  
+  examples: |  
+    - [action](media_genre)  
+    - [comedy](media_genre)  
+    - I prefer [drama](media_genre)  
+    - I love [horror](media_genre)  
+    - Give me something [romantic](media_genre)  
+    - I'm in the mood for [thriller](media_genre)  
+    - I enjoy [sci-fi](media_genre)  
+    - Anything with [fantasy](media_genre)  
+    - I'm a fan of [documentary](media_genre)  
+    - I like [animation](media_genre)  
+    - I'd love to watch [mystery](media_genre)  
+    - I'm craving [adventure](media_genre)  
+    - I adore [historical](media_genre)  
+    - I'm interested in [biography](media_genre)  
+    - I want something [musical](media_genre)  
+    - I'm obsessed with [crime](media_genre)  
+    - I need [family](media_genre)  
+    - Something [dark](media_genre)  
+    - I'm into [lighthearted](media_genre) stuff   
+    
+
+- lookup: media_genre
+  examples: |
+    - action
+    - comedy
+    - drama
+    - horror
+    - romantic
+    - thriller
+    - sci-fi
+    - fantasy
+    - documentary
+    - animation
+    - mystery
+    - adventure
+    - historical
+    - biography
+    - musical
+    - crime
+    - family
+    - action-adventure
+    
+  

@@ -1,0 +1,19 @@
+version: "3.1"
+
+actions:
+  - action_set_favorite_media
+  - action_show_favorite_media
+
+intents:
+  - tell_favorite_media
+  - ask_favorite_media
+
+entities:
+  - media_type
+  - media_name
+
+slots:
+  favorite_media:
+    type: text
+    mappings:
+      - type: custom

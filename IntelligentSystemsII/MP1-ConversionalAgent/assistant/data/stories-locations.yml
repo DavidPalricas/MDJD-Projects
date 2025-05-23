@@ -1,0 +1,39 @@
+version: "3.1"
+stories:
+- story: ask_points_of_interest_without_location_and_type_of_interest
+  steps:
+    - intent: ask_points_of_interest
+    - action: action_retrieve_location
+    - slot_was_set:
+      - location: null
+    - intent: provide_location
+    - action: action_retrieve_location
+    - slot_was_set:
+      - location: not null
+    - intent: choose_interest_type
+    - action: action_give_points_of_interest
+
+- story: ask_points_of_interest_with_location_and_without_type_of_interest
+  steps:
+    - intent: ask_points_of_interest
+    - action: action_retrieve_location
+    - slot_was_set:
+      - location: not null
+    - intent: choose_interest_type
+    - action: action_give_points_of_interest
+
+# In this story, the intent can have a location and the following action retrieves the location.
+- story: ask_points_of_interest_with_location_and_type_of_interest 
+  steps:
+    - intent: choose_interest_type
+    - slot_was_set:
+      - location: null
+    - action: action_give_points_of_interest
+
+
+- story: ask_different_points_of_interest
+  steps:
+    - intent: choose_interest_type
+    - slot_was_set:
+      - location: not null
+    - action: action_give_points_of_interest

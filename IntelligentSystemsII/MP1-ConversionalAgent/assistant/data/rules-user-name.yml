@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: Greet the user with or without a name
+  steps:
+  - intent: greet
+  - action: action_greet
+
+- rule: Store the user's name
+  steps:
+  - intent: provide_name
+  - action: action_set_name
+
+- rule: Show the user's name if provided
+  steps:
+  - intent: ask_user_name
+  - action: action_show_name

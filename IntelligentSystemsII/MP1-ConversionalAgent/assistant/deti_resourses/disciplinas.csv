@@ -1,0 +1,260 @@
+Codigo,Sigla,Nome,Regente,sigla_grau,icursocod,nvcepocaexame
+40148,MCE,Música Criatividade e Educação,Aoife Hiney,MI,8309,1º SEMESTRE
+40332,ISD,Introdução aos Sistemas Digitais,Iouliia Skliarova,L1,"[8240, 8309, 8295, 8316, 8321]",1º SEMESTRE
+40333,LSD,Laboratório de Sistemas Digitais,Adão Paulo Soares da Silva,L1,"[8240, 8309, 8295, 8316, 8321]",2º SEMESTRE
+40633,FA,Finanças Aplicadas,Joaquim Carlos da Costa Pinho,MI,8240,1º SEMESTRE
+40655,TPE,Teorias e Práticas de Educação,José Alexandre da Rocha Ventura Silva,M2,9163,1º SEMESTRE
+40692,LCI,Língua e Cultura Inglesa,Maria Sofia Pimentel Biscaia,MI,"[8309, 9263]",1º SEMESTRE
+40715,MC-I,Matemática Complementar I,Andreia Oliveira Hall,MI,8309,1º SEMESTRE
+40379,FP,Fundamentos de Programação,João Manuel de Oliveira e Silva Rodrigues,L1,"[8295, 8316, 8240]",1º SEMESTRE
+40380,ITW,Introdução Às Tecnologias Web,Joaquim Manuel Henriques de Sousa Pinto,L1,8295,1º SEMESTRE
+40381,SO,Sistemas Operativos,Ivan Miguel Serrano Pires,L1,8295,1º SEMESTRE
+40382,CD,Computação Distribuída,Diogo Nuno Pereira Gomes,L1,"[8295, 8316, 8240]",2º SEMESTRE
+40383,PDS,Padrões e Desenho de Software,José Luis Guimarães Oliveira,L1,"[8295, 8316, 8240]",2º SEMESTRE
+40384,IES,Introdução à Engenharia de Software,João Rafael Duarte de Almeida,L1,8295,1º SEMESTRE
+40385,CBD,Complementos de Bases de Dados,Carlos Manuel Azevedo Costa,L1,8295,1º SEMESTRE
+40386,APSEI,Aspetos Profissionais e Sociais da Engenharia Informática,Rui Luís Andrade Aguiar,L1,8295,2º SEMESTRE
+40387,PI,Projeto em Informática,Osvaldo Manuel da Rocha Pacheco,L1,8295,2º SEMESTRE
+40430,AA,Aprendizagem Automática,Petia Georgieva Georgieva,M2,9283,2º SEMESTRE
+40431,MAS,Modelação e Análise de Sistemas,Ilídio Fernando de Castro Oliveira,L1,"[8295, 8316]",1º SEMESTRE
+40432,SM,Sistemas Multimédia,José Manuel Neto Vieira,L1,8295,1º SEMESTRE
+40433,RS,Redes e Serviços,António Manuel Duarte Nogueira,L1,8295,1º SEMESTRE
+40436,POO,Programação Orientada a Objetos,Vítor António Gonçalves Ribeiro da Cunha,MI,"[8295, 8316, 8240]",2º SEMESTRE
+40437,AED,Algoritmos e Estruturas de Dados,Joaquim João Estrela Ribeiro Silvestre Madeira,L1,"[8295, 8316, 8321, 8240]",1º SEMESTRE
+40529,ES,Envelhecimento e Sociedade,Daniela Maria Pias de Figueiredo,M2,9281,1º SEMESTRE
+40534,TAA,Tópicos de Aprendizagem Automática,Susana Manuela Martinho dos Santos Baía Brás,L1,8295,2º SEMESTRE
+40551,TPW,Tecnologias e Programação Web,Helder Troca Zagalo,L1,8295,1º SEMESTRE
+40751,AA,Algoritmos Avançados,Joaquim João Estrela Ribeiro Silvestre Madeira,M2,"[9294, 9283, 9263]",1º SEMESTRE
+40752,TAI,Teoria Algoritmica da Informação,António José Ribeiro Neves,M2,9263,2º SEMESTRE
+40753,CLE,Computação em Larga Escala,Eurico Farinha Pedrosa,M2,"[9291, 9263, 8240]",2º SEMESTRE
+40754,SIO,Sistemas de Informação Nas Organizações,Osvaldo Manuel da Rocha Pacheco,M2,"[9283, 9263]",2º SEMESTRE
+40755,SO,Simulação e Otimização,Amaro Fernandes de Sousa,M2,"[9283, 9263]",2º SEMESTRE
+40756,GIC,Gestão de Infraestruturas de Computação,João Paulo Silva Barraca,M2,"[9283, 9263]",2º SEMESTRE
+40757,AS,Arquiteturas de Software,Cláudio Jorge Vieira Teixeira,M2,9263,2º SEMESTRE
+40769,IFES,Introdução à Física do Estado Sólido,Teresa Maria Fernandes Rodrigues Cabral Monteiro,MI,"[8309, 8321]",2º SEMESTRE
+40776,MCC,Modelação e Computação Científica,José Richard Baptista Gomes,M2,9294,1º SEMESTRE
+40777,OC,Ótica Computacional,Ana Maria Sousa da Rocha,M2,9295,1º SEMESTRE
+40779,CP,Computação Paralela,José Nuno Panelas Nunes Lau,M2,9294,2º SEMESTRE
+40780,MSC,Modelação de Sistemas Complexos,José Daniel Lago da Silva Neves Gouveia,M2,9294,2º SEMESTRE
+40781,LCVC,Laboratório de Computação e Visualização Científica,João Cunha de Sequeira Amaral,M2,9294,2º SEMESTRE
+40782,MSAM,Modelação de Sistemas Atmosféricos e Marinhos,David João da Silva Carvalho,M2,9294,2º SEMESTRE
+40803,CD,Controlo Digital,Alexandre Manuel Moutela Nunes da Mota,M2,"[8309, 9295, 9283, 8321]",2º SEMESTRE
+40814,sd,Sistemas Distribuídos,,MI,"[8240, 9263, 8316, 8321, 9291]",2º SEMESTRE
+40845,PCP,Planeamento e Controlo da Produção,,L1,8321,2º SEMESTRE
+40846,IA,Inteligência Artificial,Luís Filipe de Seabra Lopes,L1,"[8295, 8316, 8240]",1º SEMESTRE
+40847,EPS,Engenharia de Processos em Serviços,Marlene Paula Castro Amorim,L1,"[9294, 8321]",2º SEMESTRE
+40909,dt,Desenho Técnico,,L1,8327,2º SEMESTRE
+40914,io,Investigação Operacional,Carlos Manuel dos Santos Ferreira,L1,8295,2º SEMESTRE
+41006,MDRS,Modelação e Desempenho de Redes e Serviços,Amaro Fernandes de Sousa,M2,"[9291, 9263, 8316, 8240]",1º SEMESTRE
+41007,ASE,Arquiteturas para Sistemas Embutidos,Arnaldo Silva Rodrigues de Oliveira,M2,"[9291, 8316, 8321, 8240]",2º SEMESTRE
+41008,RSA,Redes e Sistemas Autónomos,Susana Isabel Barreto de Miranda Sargento,L1,"[9291, 8316, 8240]",2º SEMESTRE
+41009,EGS,Engenharia e Gestão de Serviços,Diogo Nuno Pereira Gomes,M2,"[9291, 8316, 8240]",2º SEMESTRE
+41010,FAA,Fundamentos de Aprendizagem Automática,Petia Georgieva Georgieva,M2,"[9263, 8240]",1º SEMESTRE
+41019,AIA,Aplicações de Inteligência Artificial,Petia Georgieva Georgieva,M2,"[9294, 9263]",1º SEMESTRE
+41020,SEC,Seminário de Engenharia Computacional,Carlos António Delgado Sousa Brites,M2,9294,1º SEMESTRE
+41165,ECS,Estatística Computacional e Simulação,Isabel Maria Simões Pereira,M2,"[8309, 9294]",1º SEMESTRE
+41226,rmi,Robótica Móvel e Inteligente,,M2,"[8240, 8309, 8295, 9291, 8316, 9263]",1º SEMESTRE
+41231,im,Interação Multimodal,António Joaquim da Silva Teixeira,M2,"[9283, 9263, 8240]",1º SEMESTRE
+41302,ge,Gestão de Empresas,Jorge Humberto Fernandes Mota,L1,8295,1º SEMESTRE
+41400,MSI,Música Som e Imagem,,MI,8309,1º SEMESTRE
+41405,ED,Eletrónica Digital,Ernesto Fernando Ventura Martins,MI,"[8309, 8321, 9295]",2º SEMESTRE
+41406,ep,Electrónica de Potência,,MI,"[8309, 9163, 9295, 8321]",1º SEMESTRE
+41407,ie,Instrumentação Electrónica,,M2,"[8309, 9295]",1º SEMESTRE
+41429,MTF,Materiais e Tecnologias de Fabrico,,L1,8327,2º SEMESTRE
+41469,C,Compiladores,Miguel Augusto Mendes Oliveira e Silva,L1,"[8295, 8316, 8240]",2º SEMESTRE
+41474,TM,"Técnicas Matemáticas para ""big Data""",Eugénio Alexandre Miguel Rocha,M2,9283,1º SEMESTRE
+41479,RT,Redes de Telecomunicações,Amaro Fernandes de Sousa,MI,"[8309, 8321]",2º SEMESTRE
+41482,CE,Campo Eletromagnético,José Fernando Ferreira Mendes,L1,"[8309, 8327, 8321]",2º SEMESTRE
+41484,MPE,Métodos Probabilísticos em Eletrotecnia,Pedro Miguel Ribeiro Lavrador,MI,"[8309, 8321]",1º SEMESTRE
+41485,SC,Sistemas e Controlo,Telmo Reis Cunha,MI,"[8309, 8321]",1º SEMESTRE
+41486,DE,Dispositivos Eletrónicos,Pedro Miguel da Silva Cabral,MI,"[8309, 8321]",1º SEMESTRE
+41487,SSD,Sinais e Sistemas Discretos,,MI,"[8309, 8321, 9295]",1º SEMESTRE
+41489,SIE,Sistemas de Instrumentação Electrónica,Luís Manuel Cadillon Martins Costa,M2,"[8309, 9163, 9295, 8321]",2º SEMESTRE
+41491,SC,Sistemas de Comunicação,Paulo Miguel Nepomuceno Pereira Monteiro,L1,"[8309, 8321]",2º SEMESTRE
+41492,ES,Engenharia de Software,Nuno José Ferreira de Sá Couto,MI,"[9263, 8240]",1º SEMESTRE
+41495,EA,Eletrónica Analógica,Pedro Filipe Vieira Rito,L1,"[8309, 8295, 8321]",2º SEMESTRE
+41499,ERF,Eletrónica de Rádio Frequência,Pedro Miguel da Silva Cabral,MI,"[8309, 9295]",2º SEMESTRE
+41502,M,Microelétronica,Pedro Filipe Vieira Rito,MI,"[8309, 9295, 8321]",2º SEMESTRE
+41505,SETR,Sistemas Embutidos e de Tempo Real,,M2,"[8309, 9295, 9283, 8321]",2º SEMESTRE
+41513,SIAE,Sistemas Integrados para Aplicações Embutidas,Arnaldo Silva Rodrigues de Oliveira,M2,"[8309, 9295]",1º SEMESTRE
+41519,PO,Programação Por Objectos,Daniel Nunes Corujo,L1,"[8309, 8327, 8321]",2º SEMESTRE
+41521,LE,Laboratórios de Estatística,,MI,8240,1º SEMESTRE
+41534,ro,Redes Ópticas,,M2,"[8309, 9295, 8321]",2º SEMESTRE
+41549,ihc,Interação Humano-computador,,L1,"[8295, 8316, 8240]",2º SEMESTRE
+41559,mn,Métodos Numéricos,António Jorge Monteiro Neves,MI,"[8309, 8321]",1º SEMESTRE
+41567,PROE,Propagação e Radiação de Ondas Electromagnéticas,,L1,"[8309, 8321]",2º SEMESTRE
+41594,co,Comunicações Ópticas,,MI,"[8309, 9295]",1º SEMESTRE
+41686,PEA,Projecto em Engenharia de Automação,,M2,9163,2º SEMESTRE
+41687,MDLE,Mineração de Dados em Larga Escala,Alina Liliana Trifan,M2,9263,2º SEMESTRE
+41722,SAVI,Sistemas Avançados de Visão Industrial,,M2,"[9163, 9294]",1º SEMESTRE
+41726,VA,Veículos Autónomos,Vítor Manuel Ferreira dos Santos,M2,"[9163, 9283]",1º SEMESTRE
+41757,mf,Mecânica dos Fluidos,Vítor António Ferreira da Costa,L1,8327,2º SEMESTRE
+41769,MSF,Modelação de Sistemas Físicos,Gareth John Baxter,L1,8295,2º SEMESTRE
+41770,RS,Redes e Serviços,António Manuel Duarte Nogueira,L1,8295,1º SEMESTRE
+41773,fc,Física Computacional,Sofia da Conceição Veladas Latas,MI,"[8309, 8321]",2º SEMESTRE
+41774,PAC,Programação e Algoritmos em Ciências,Osvaldo Manuel da Rocha Pacheco,M2,"[9281, 9294, 9263]",1º SEMESTRE
+41779,SR,Software Robusto,Nuno Pedro de Jesus Silva,M2,"[9281, 9263]",1º SEMESTRE
+41780,CA,Criptografia Aplicada,André Ventura da Cruz Marnôto Zúquete,M2,"[9281, 9283]",1º SEMESTRE
+41781,AEV,Análise e Exploração de Vulnerabilidades,João Paulo Silva Barraca,MI,"[9281, 9294, 9263, 8240]",1º SEMESTRE
+41782,SRC,Segurança em Redes de Comunicações,Paulo Jorge Salvador Serra Ferreira,MI,"[8240, 9281, 8316, 8321, 9291]",2º SEMESTRE
+41783,IAA,Identificação Autenticação e Autorização,João Paulo Silva Barraca,M2,9281,2º SEMESTRE
+41786,DOS,Direito e Organização da Segurança,Maria Cândida Guedes Machado Antunes de Oliveira,M2,9281,2º SEMESTRE
+41787,AAS,Aprendizagem Aplicada à Segurança,Mário Luís Pinto Antunes,M2,"[9281, 9263, 8240]",1º SEMESTRE
+41789,AFSC,Análise Forense de Sistemas Computacionais,Marco Paulo Gomes Mira,M2,"[9281, 9263]",1º SEMESTRE
+41790,AES,Ambientes de Execução Seguros,Paulo Jorge de Campos Bartolomeu,M2,9281,2º SEMESTRE
+41793,fq,Física Quântica,António Ferreira da Cunha,MI,"[8309, 8321]",2º SEMESTRE
+41794,ER,Engenharia Reversa,João Paulo Silva Barraca,L1,"[9281, 8295]",2º SEMESTRE
+41796,PC,Psicologia e Cibersegurança,José Ignacio Guinaldo Martin,MI,"[8309, 9281, 9283, 9263]",1º SEMESTRE
+41876,SI-I,Sistemas Inteligentes I,Luís Filipe de Seabra Lopes,M2,"[9283, 9263]",1º SEMESTRE
+41877,SI-II,Sistemas Inteligentes II,Luís Filipe de Seabra Lopes,M2,"[9283, 9263]",2º SEMESTRE
+41878,PSR,Programação de Sistemas Robóticos,Eurico Farinha Pedrosa,M2,"[8309, 9163, 9283, 9263]",2º SEMESTRE
+41879,PC,Perceção e Controlo,José Nuno Panelas Nunes Lau,M2,9283,1º SEMESTRE
+41883,MMA,Materiais para Manufatura Aditiva,Susana Maria Henriques Olhero,M2,9163,1º SEMESTRE
+41914,ICD,Introdução à Ciência de Dados,João José Lourenço Marques,MI,"[8309, 8240]",1º SEMESTRE
+41919,SIGCS,Sistemas de Informação Geográfica para Ciências Sociais,Luis Jorge dos Santos Gouveia Marques Gonçalves,MI,"[9263, 8240]",1º SEMESTRE
+41941,FM,Física Moderna,Vitor Brás de Sequeira Amaral,L1,"[8309, 8295, 8321]",2º SEMESTRE
+41945,SSE,Sinais e Sistemas Eletrónicos,Ernesto Fernando Ventura Martins,L1,"[8316, 8240]",2º SEMESTRE
+41947,LI,Laboratórios de Informática,António Manuel Adrego da Rocha,MI,"[8316, 8240]",2º SEMESTRE
+41948,AC-I,Arquitectura de Computadores I,António Rui de Oliveira e Silva Borges,MI,"[8309, 8316, 8321, 8240]",1º SEMESTRE
+41949,RC-II,Redes de Comunicações II,Paulo Jorge Salvador Serra Ferreira,MI,"[8316, 8240]",2º SEMESTRE
+41950,RC-I ,Redes de Comunicações I,Paulo Jorge Salvador Serra Ferreira,L1,"[8316, 8240]",1º SEMESTRE
+41951,AS,Análise de Sistemas,Ilídio Fernando de Castro Oliveira,L1,"[8316, 8240]",2º SEMESTRE
+41952,AC-II,Arquitectura de Computadores II,José Luis Costa Pinto de Azevedo,L1,"[8309, 8316, 8321, 8240]",2º SEMESTRE
+41953,PECI,Projeto em Engenharia de Computadores e Informática,José Manuel Matos Moreira,MI,"[8316, 8240]",ANUAL
+41954,MCE,Mecânica e Campo Eletromagnético,Isabel Maria Coelho de Oliveira Malaquias,MI,"[8316, 8240]",1º SEMESTRE
+41969,PMTM,Propriedades Mecânicas e Térmicas dos Materiais,Maria Georgina Macedo Miranda,L1,8327,2º SEMESTRE
+41987,IEE,Introdução à Engenharia Eletrotécnica,José Luís Vieira Cura,MI,"[8309, 8321]",1º SEMESTRE
+41988,P,Programação,Daniel Nunes Corujo,L1,"[8309, 8327, 8321]",1º SEMESTRE
+41989,LE,Laboratório de Eletrónica,,MI,"[8309, 8321]",2º SEMESTRE
+41990,AC,Análise de Circuitos,Ernesto Fernando Ventura Martins,MI,"[8309, 8321]",1º SEMESTRE
+41991,EA,Eletrotecnia Aplicada,Fernanda de Oliveira Resende,L1,"[8309, 8321]",1º SEMESTRE
+42062,PSFD,Projeto em Sistemas de Fabrico Digitais,Carlos Alberto Moura Relvas,M2,9163,1º SEMESTRE
+42078,IC,Informação e Codificação,António José Ribeiro Neves,M2,"[9294, 8240, 9291, 8316, 8321, 9263]",1º SEMESTRE
+42079,AAD,Arquiteturas de Alto Desempenho,Tomás António Mendes Oliveira e Silva,M2,"[8240, 9263, 8316, 8321, 9295, 9291]",1º SEMESTRE
+42080,CM,Comunicações Móveis,Daniel Nunes Corujo,M2,"[8240, 8309, 8316, 8321, 9291]",1º SEMESTRE
+42081,SOTR,Sistemas Operativos e de Tempo-real,Paulo Bacelar Reis Pedreiras,M2,"[8240, 9263, 8316, 9295, 9291]",1º SEMESTRE
+42082,AC,Arquiteturas de Comunicação,Rui Luís Andrade Aguiar,MI,"[8316, 9291, 8240]",1º SEMESTRE
+42083,RCIS,Redes Com Integração de Serviços,António Manuel Duarte Nogueira,M2,"[8309, 9295, 8321]",2º SEMESTRE
+42084,CD,Comunicações Digitais,Paulo Miguel Nepomuceno Pereira Monteiro,MI,"[8309, 9295, 8321]",1º SEMESTRE
+42085,EMOA,Engenharia de Micro-ondas e Antenas,Pedro Renato Tavares de Pinho,M2,"[8309, 9295, 8321]",1º SEMESTRE
+42088,PI,Projeto Industrial,Pedro Nicolau Faria da Fonseca,M2,"[8309, 9295]",1º SEMESTRE
+42138,TDW,Tecnologias e Desenvolvimento Web,Carlos Manuel das Neves Santos,M2,9263,1º SEMESTRE
+42139,DCW,Design de Comunicação Web,Luís Nuno Coelho Dias,MI,"[9294, 8240]",1º SEMESTRE
+42140,DAEU,Design e Avaliação de Experiência do Utilizador,Ana Rita Costa Bonifácio Selores dos Santos,M2,9263,1º SEMESTRE
+42150,PRA,Produção e Realização Audiovisual,Hélder José Marques Caixinha,MI,8309,1º SEMESTRE
+42192,EP,Elementos de Programação,Tomás António Mendes Oliveira e Silva,MI,"[9163, 8240]",1º SEMESTRE
+42194,EAI,Elementos de Automação Industrial,Marco Paulo Soares dos Santos,M2,9163,1º SEMESTRE
+42195,VC,Visão Por Computador,Paulo Miguel de Jesus Dias,MI,"[9294, 9283, 8240]",1º SEMESTRE
+42196,FSO,Fundamentos de Sistemas Operativos,,M2,"[9294, 8309, 9163, 8321, 9295, 9263]",1º SEMESTRE
+42201,TPJ,Tópicos de Programação para Jogos,Diogo Nuno Pereira Gomes,M2,"[8309, 9281, 9283, 9263]",1º SEMESTRE
+42205,DP,Desenho de Personagens,,M2,"[8309, 9263]",1º SEMESTRE
+42252,ESS,Engenharia de Sistemas de Satélite,Manuel de Jesus Ferreira Dinis,M2,"[8309, 9295]",1º SEMESTRE
+42254,IEA,Introdução à Engenharia Aeroespacial,,L1,8327,1º SEMESTRE
+42255,OMA,Ondas e Mecânica Aplicada,Vitor Hugo da Rosa Bonifácio,L1,8327,1º SEMESTRE
+42255,OMA,Ondas e Mecânica Aplicada,,L1,8327,1º SEMESTRE
+42256,TTC,Termodinâmica e Transferência de Calor,,L1,8327,1º SEMESTRE
+42258,DEA,Design de Estruturas Aeroespaciais,,L1,8327,1º SEMESTRE
+42259,SE,Sistemas Eletrónicos,,L1,8327,2º SEMESTRE
+42280,FCD,Fundamentos de Ciência de Dados,,M2,9263,1º SEMESTRE
+42282,CAA,Complementos de Aprendizagem Automática,,M2,9263,2º SEMESTRE
+42283,ENN,Empreendedorismo e Novos Negócios,,MI,"[8240, 8309, 8316, 8321, 8327]",1º SEMESTRE
+42284,GP,Gestão de Projetos,,L1,"[8240, 8309, 8316, 8321, 8327]",1º SEMESTRE
+42288,DT,Design Thinking,,MI,"[8316, 8327, 8321, 8240]",1º SEMESTRE
+42290,TCA,Técnicas de Comunicação e Apresentações,,MI,"[8240, 8309, 8316, 8321, 8327]",1º SEMESTRE
+42291,E-I,Economia I,,MI,"[8240, 8309, 8316, 8321, 8327]",1º SEMESTRE
+42292,FE,Finanças Empresariais,,L1,"[8321, 8316, 8327, 8240]",1º SEMESTRE
+42294,MICSA,Microcontrololadores e Interação Com Sensores e Atuadores,,MI,"[8240, 8309, 8316, 8321, 8327]",2º SEMESTRE
+42295,MDS,Materiais e Desenvolvimento Sustentável,,L1,"[8240, 8309, 8316, 8321, 8327]",2º SEMESTRE
+42296,VD,Visualização de Dados,,MI,"[8240, 8309, 8316, 8321, 8327]",2º SEMESTRE
+42297,ER,Energias Renováveis,,L1,"[8321, 8316, 8327, 8240]",2º SEMESTRE
+42298,FAI3,Fabrico Aditivo e Impressão 3d,,L1,"[8321, 8316, 8327, 8240]",2º SEMESTRE
+42299,IHC,Interação Humano-computador,,L1,"[8321, 8316, 8327, 8240]",2º SEMESTRE
+42300,IMEF,Introdução Ao Método dos Elementos Finitos,,L1,"[8316, 8327, 8321, 8240]",2º SEMESTRE
+42301,MS,Mobilidade Sustentável,,L1,"[8316, 8327, 8321]",2º SEMESTRE
+42302,PW,Programação Web,,L1,"[8327, 8316, 8321, 8240]",2º SEMESTRE
+42354,IO,Investigação Operacional,,MI,"[8240, 8309, 8316, 8321, 8327]",2º SEMESTRE
+42502,IAC,Introdução à Arquitetura de Computadores,,L1,"[8295, 8316, 8327]",2º SEMESTRE
+42509,so,Sistemas de Operação,,L1,"[8316, 8240]",1º SEMESTRE
+42532,bd,Bases de Dados,,L1,"[8295, 8316, 8240]",2º SEMESTRE
+42535,II,Informática Industrial,,M2,"[9163, 9294, 9283]",2º SEMESTRE
+42573,sio,Segurança Informática e Nas Organizações,,L1,"[8295, 8316, 8240]",1º SEMESTRE
+42596,RI,Recuperação de Informação,,M2,"[9283, 9263]",1º SEMESTRE
+42606,A-I,Alemão I,,M2,9294,1º SEMESTRE
+42607,A-II,Alemão II,,M2,9294,2º SEMESTRE
+42709,ALGA,ALGA,,L1,"[8240, 8309, 8295, 8316, 8321, 8327]",1º SEMESTRE
+42728,C-I,Cálculo I ,,L1,"[8240, 8309, 8295, 8316, 8321, 8327]",1º SEMESTRE
+42729,C-II,Cálculo II ,,L1,"[8240, 8309, 8295, 8316, 8321, 8327]",2º SEMESTRE
+42791,C-III,Cálculo III ,,L1,"[8309, 8295, 8327, 8321]",1º SEMESTRE
+43310,TPR,Técnicas de Percepção de Redes,,M2,"[9281, 9291, 8240]",1º SEMESTRE
+43312,RVA,Realidade Virtual e Aumentada,,MI,"[9294, 9283, 9263, 8240]",1º SEMESTRE
+43313,RM,Robótica Móvel,,M2,9283,2º SEMESTRE
+43370,LC-I,Língua Chinesa I,,M2,"[9281, 9263]",1º SEMESTRE
+43447,SFP,Sistemas Flexíveis de Produção,,M2,"[9163, 9283]",1º SEMESTRE
+43460,agr,Arquitectura e Gestão de Redes,,L1,8295,1º SEMESTRE
+43948,E,Empreendedorismo,,L1,"[8295, 9163, 8240]",1º SEMESTRE
+44139,CM,Computação Móvel,,M2,"[9281, 9263, 8240]",1º SEMESTRE
+44153,sgr,Segurança e Gestão de Risco,,M2,"[9281, 9263]",2º SEMESTRE
+44156,vi,Visualização de Informação,,MI,"[9281, 9283, 9263, 8240]",1º SEMESTRE
+44158,ws,Web Semântica,,M2,"[9283, 9263]",2º SEMESTRE
+45423,ICG,Introdução à Computação Gráfica,,L1,"[8295, 8316, 8240]",2º SEMESTRE
+45424,ICM,Introdução à Computação Móvel,,L1,"[8295, 8316, 8240]",2º SEMESTRE
+45426,TQS,Teste e Qualidade de Software,,L1,8295,2º SEMESTRE
+45587,ED,Exploração de Dados,,M2,"[9163, 9283, 9263]",1º SEMESTRE
+45628,AII,Análise e Interpretação de Imagem,,M2,"[8309, 9163, 9283, 9263]",1º SEMESTRE
+45656,thier,Teoria e História da Integração Europeia e Regional,,M2,9281,1º SEMESTRE
+45658,epp,Europa e Políticas de População,,MI,8309,1º SEMESTRE
+45660,gd,Governo Digital,,M2,9263,1º SEMESTRE
+45733,gip,Gestão Integrada de Projectos,,MI,"[8309, 8295]",1º SEMESTRE
+45916,adpe,Análise de Dados e Planeamento Experimental,,MI,8240,1º SEMESTRE
+46402,ms,Mecânica dos Sólidos,,L1,8327,2º SEMESTRE
+46441,LIT,Laboratório de Internacionalização em Turismo,,MI,"[9263, 8240]",1º SEMESTRE
+46445,mc,Mecânica Computacional,,M2,9294,1º SEMESTRE
+46456,MED,Marketing e Estratégias Digitais,,MI,"[9263, 8240]",1º SEMESTRE
+46504,tac,Tecnologias de Accionamento e Comando,,M2,9163,1º SEMESTRE
+46526,CNC,Comando Numérico Por Computador,,M2,9163,1º SEMESTRE
+46660,ES,Educação para a Sustentabilidade,,M2,9295,1º SEMESTRE
+46873,ef,Estudos de Fotografia,,MI,8240,1º SEMESTRE
+47053,CV,Computação Visual,,M2,"[9291, 9263, 8240]",1º SEMESTRE
+47134,iaps,Introdução à Análise e Processamento de Sinal,,MI,"[8309, 8321]",2º SEMESTRE
+47138,IEI,Introdução à Engenharia Informática,,MI,"[8316, 8240]",1º SEMESTRE
+47166,MD,Matemática Discreta,,L1,"[8295, 8316, 8240]",2º SEMESTRE
+47169,mc,Mecânica Clássica,,L1,8327,1º SEMESTRE
+47171,MO,Mecânica e Oscilações,,L1,"[8309, 8321]",2º SEMESTRE
+47237,spt,Simulação de Processos Tecnológicos,,M2,9294,1º SEMESTRE
+47268,to,Teoria das Organizações,,L1,8316,2º SEMESTRE
+47280,ge,Genética e Evolução,,L1,8295,1º SEMESTRE
+47460,ad,Análise de Dados,,L1,8321,1º SEMESTRE
+47475,AGP,Avaliação e Gestão de Projectos,,MI,8309,1º SEMESTRE
+47501,CR,Computação Reconfigurável,,M2,"[9291, 8316, 8240]",2º SEMESTRE
+47527,dpidt,Desenvolvimento e Planeamento Integrado de Destinos Turísticos,,MI,8240,1º SEMESTRE
+47553,ece,Empreendedorismo e Criação de Empresas,,MI,"[8309, 8240]",1º SEMESTRE
+47573,em,Estatística Multivariada,,M2,9263,1º SEMESTRE
+47576,ec,Estratégia e Competitividade,,MI,8309,1º SEMESTRE
+47610,ge,Gestão de Energia,,L1,8321,1º SEMESTRE
+47634,i,Inglês I,,M2,9263,1º SEMESTRE
+47677,mif,Mercados e Instrumentos Financeiros,,M2,"[9281, 9294, 8240]",1º SEMESTRE
+47691,MIO,Métodos de Investigação Operacional,,M2,9294,1º SEMESTRE
+47705,mpn,Modelos e Processos de Negócio,,MI,"[8309, 9295]",1º SEMESTRE
+47739,per,Política Energética e Regulação,,MI,8309,1º SEMESTRE
+47789,rpc,Relações Político-culturais,,MI,8309,1º SEMESTRE
+47793,ri,Robótica Industrial,,M2,"[9163, 9283]",1º SEMESTRE
+47800,s,Servomecanismos,,M2,9163,1º SEMESTRE
+47810,svpi,Sistemas de Visão e de Percepção Industrial,,M2,"[9163, 9294, 9283]",2º SEMESTRE
+47814,se,Sociologia da Educação,,M2,9281,1º SEMESTRE
+47837,tc,Teoria da Computação,,MI,"[9263, 8240]",1º SEMESTRE
+47884,gqs,Gestão da Qualidade em Serviços,,MI,8309,1º SEMESTRE
+47934,hcl,História e Cultura do Livro,,M2,9263,1º SEMESTRE
+47975,RSI,Redes e Serviços em Imagiologia,,L1,"[8295, 9263, 8240]",1º SEMESTRE
+47977,csf,Comunicações Sem Fios,,M2,"[8309, 9295]",2º SEMESTRE
+47978,ebp,Electrónica de Baixa Potência,,MI,"[8309, 9295]",1º SEMESTRE
+48104,n,Neurobiologia,,M2,9294,1º SEMESTRE
+49903,,49903-S_9916 Seminário - Nanociências e Nanotecnologia,,MI,"[9281, 9283, 9291, 8240]",1º SEMESTRE
+49983,PEE,Projecto em Engenharia Electrotécnica,,MI,"[8309, 8321]",ANUAL
+81156,CCA,Competências Comunicacionais Aplicadas,,L1,8295,1º SEMESTRE
+81485,IF,Investimentos Financeiros,,MI,"[8309, 9281, 9163]",1º SEMESTRE
+81512,ACP,Análise e Controlo de Projetos,,L1,8316,1º SEMESTRE
+81547,TAD,Técnicas de Análise de Dados,,L1,8295,2º SEMESTRE
+82130,ME,Marketing Estratégico,,M2,9163,1º SEMESTRE
+82504,CC,Comportamento do Consumidor,,M2,9281,1º SEMESTRE
+84314,GMCD,Gestão Marketing e Comunicação Digital,,MI,8240,1º SEMESTRE
+84319,PW,Programação Web,,MI,8240,1º SEMESTRE

@@ -1,0 +1,38 @@
+version : "3.1"
+
+stories:
+- story: ask_tv_show_suggestions_without_genre
+  steps:
+  - intent: ask_tv_show_suggestions
+  - slot_was_set:
+    - is_movie: false
+    - media_genre: null
+  - action: action_ask_media_genre
+  - intent: provide_media_genre
+  - action: action_recommend_media
+
+- story: ask_tv_show_suggestions_with_genre
+  steps:
+  - intent: ask_tv_show_suggestions
+  - slot_was_set:
+    - is_movie: false
+    - media_genre: not null
+  - action: action_recommend_media
+
+- story: ask_movie_suggestions_without_genre
+  steps:
+  - intent: ask_movie_suggestions
+  - slot_was_set:
+    - is_movie: true
+    - media_genre: null
+  - action: action_ask_media_genre
+  - intent: provide_media_genre
+  - action: action_recommend_media
+
+- story: ask_movie_suggestions_with_genre
+  steps:
+  - intent: ask_movie_suggestions
+  - slot_was_set:
+    - is_movie: true
+    - media_genre: not null
+  - action: action_recommend_media

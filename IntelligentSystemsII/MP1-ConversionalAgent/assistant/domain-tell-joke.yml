@@ -1,0 +1,7 @@
+version: "3.1"
+
+intents:
+  - tell_joke
+
+actions:
+  - action_tell_joke

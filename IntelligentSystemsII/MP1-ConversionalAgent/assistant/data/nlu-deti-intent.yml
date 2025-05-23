@@ -1,0 +1,185 @@
+version: "3.1"
+nlu:
+- intent: course_info
+  examples: |
+    - I want to know more about [8309](codigo)
+    - Can you give me details about [8321](codigo)?
+    - Tell me more about [LECI](sigla_curso)
+    - What is the structure of [MEI](sigla_curso)?
+    - Give me information about [Licenciatura em Engenharia Informática](curso)
+    - I'd like to learn more about [9295](codigo)
+    - Is [LETI](sigla_curso) a full-time degree?
+    - What can you tell me about [Licenciatura em Engenharia Aeroespacial](curso)?
+    - Do you have information on [9283](codigo)?
+    - How long is the [Mestrado em Engenharia Computacional](curso)?
+    - What is included in the [8327](codigo) course?
+    - Where can I find info about [Mestrado em Cibersegurança](curso)?
+    - I'm interested in [9263](codigo)
+    - Tell me about [LEB](sigla_curso)
+    - What's the degree level of [MIECT](sigla_curso)?
+    - What's the full name of [9163](codigo)?
+    - Does [MIEET](sigla_curso) belong to a bachelor's or master's program?
+    - What does [LECI](sigla_curso) stand for?
+
+- intent: disciplina_info
+  examples: |
+    - I want to know more about [C-I](sigla_disciplina)
+    - Can you give me information about [12345](codigo)?
+    - Tell me more about the subject [Redes de Computadores](disciplina)
+    - What is the content of [POO](sigla_disciplina)?
+    - Give me details on [67890](codigo)
+    - Who is the professor for [Álgebra Linear](disciplina)?
+    - Who teaches [BD](sigla_disciplina)?
+    - Show me the syllabus for [87654](codigo)
+    - In which semester is [Compiladores](disciplina) taught?
+    - What degree level is [SO](sigla_disciplina) from?
+    - Is [43210](codigo) a master's or bachelor's course?
+    - What are the learning outcomes of [Matemática Discreta](disciplina)?
+    - Which courses include [IA](sigla_disciplina)?
+    - Is [Arquitetura de Computadores](disciplina) part of wich course?
+    - Does [Segurança Informática](disciplina) belong to any bachelor's programs?
+    - Where can I find the materials for [SI-II](sigla_disciplina)?
+    - Is [23456](codigo) available in the first semester?
+    - Is [Engenharia de Software](disciplina) taught in the second semester?
+    - What courses include [Programação Funcional](disciplina)?
+    - What is the full name of [SI-I](sigla_disciplina)?
+    - Does [87654](codigo) have any prerequisites?
+    - Is [Redes de Computadores](disciplina) available this semester?
+    - Which degree level includes [Análise de Algoritmos](disciplina)?
+    - What's the course code for [Segurança Informática](disciplina)?
+
+- intent: professor_info
+  examples: |
+    - Who is professor [Diogo Gomes](professor)?
+    - Can you give me details about [Dr. Adrego Rocha](professor)?
+    - What does [Luis Lopes](professor) teach?
+    - Which subjects are taught by [Suzana Sargento](professor)?
+    - What department is [Paulo Dias](professor) in?
+    - Which courses is [Antonio Teixeira](professor) associated with?
+    - What is [Daniel Corujo](professor)'s email?
+    - How can I contact [Jose Cura](professor)?
+    - Where is the office of [Luís Lopes](professor)?
+    - What is the office number of [Andre Zúquete](professor)?
+    - In which building is [Helena Ribeiro](professor)'s office?
+    - What is the research area of [Pedro Cabtral](professor)?
+    - What is [Jose Moreira](professor) working on?
+    - Is [Rui Aguiar](professor) available for thesis supervision?
+    - Where can I find the schedule of [Pedro Rito](professor)?
+    - Which department does [Nuno Lau](professor) belong to?
+    - What are the office hours of [Miguel Silva](professor)?
+    - What role does [Tomas Silva](professor) have in the university?
+    - Does [Jorge Mota](professor) have a personal webpage?
+    - Can you provide information on professor [Eurico Pereira](professor)?
+
+- intent: email_info
+  examples: |
+    - Who owns the email [jrgomes@ua.pt](email)?
+    - Can you tell me whose email is [lsl@ua.pt](email)?
+    - To whom does the email [susana@ua.pt](email) belong?
+    - Which professor has the email [dgomes@ua.pt](email)?
+    - Is [jmadeira@ua.pt](email) a student or a professor?
+    - Who is the owner of the email [efp@ua.pt](email)?
+    - Does [ndias@ua.pt](email) belong to a faculty member?
+    - Can you identify the person behind [tos@ua.pt](email)?
+    - What is the name of the person using [paulo.dias@ua.pt](email)?
+    - Find the owner of [jose.moreira@ua.pt](email)
+    - Is [vamaral@ua.pt](email) an academic staff member?
+    - Tell me who uses [nunolau@ua.pt](email)?
+    - Is [ricardo.sousa@university.edu](email) a professor?
+
+- intent: course_list_degree
+  examples: |
+    - What courses does the department offer?
+    - Can you list all available programs?
+    - What degrees are offered?
+    - Show me the courses available in this department.
+    - What are the available bachelor's programs?
+    - List all [bachelor's](grau) degrees.
+    - Which [master's](grau) programs does the department offer?
+    - What are the postgraduate options?
+    - Do you have any [doctor's](grau) programs?
+    - Show me the available courses.
+    - What academic programs are available at the [bachelor's](grau) level?
+    - I want to see all the courses at the [master's](grau) level.
+    - Does the department have any PhD programs?
+    - What degree programs can I apply for?
+    - List all [integrated master's](grau) courses.
+    - Show me the department's offerings.
+
+- intent: disciplina_list_course
+  examples: |
+    - What subjects are in [LECI](sigla_curso)?
+    - Can you list all the disciplines of [MEI](sigla_curso)?
+    - What are the subjects in [8321](codigo)?
+    - Show me the subjects of [Mestrado em Cibersegurança](curso).
+    - Which courses are included in [Licenciatura em Engenharia Informática](curso)?
+    - List all subjects in [MIECT](sigla_curso).
+    - What are the disciplines for [9263](codigo)?
+    - What subjects are covered in [Licenciatura em Engenharia Aeroespacial](curso)?
+    - Which subjects are part of [Mestrado em Engenharia Eletrónica e Telecomunicações](curso)?
+    - Show me the curriculum of [LETI](sigla_curso).
+    - I want to see the subjects for [9295](codigo).
+    - What are the classes in [Mestrado em Robótica e Sistemas Inteligentes](curso)?
+    - Can you tell me the subjects included in [9294](codigo)?
+    - Which disciplines belong to [Licenciatura em Engenharia Eletrotécnica e de Computadores](curso)?
+    - Does [9281](codigo) have programming-related subjects?
+
+    - What subjects are in the [first semester](semestre) of [LECI](sigla_curso)?
+    - Can you list all disciplines in the [second semester](semestre) of [MEI](sigla_curso)?
+    - What are the subjects in the [first semester](semestre) of [8321](codigo)?
+    - Show me the subjects of [Mestrado em Cibersegurança](curso) in the [second semester](semestre).
+    - Which courses are included in the [first semester](semestre) of [Licenciatura em Engenharia Informática](curso)?
+    - List all subjects in the [second semester](semestre) of [MIECT](sigla_curso).
+    - What are the disciplines for [9263](codigo) in the [first semester](semestre)?
+    - What subjects are covered in the [second semester](semestre) of [Licenciatura em Engenharia Aeroespacial](curso)?
+    - Which subjects are part of [Mestrado em Engenharia Eletrónica e Telecomunicações](curso) in the [first semester](semestre)?
+    - Show me the curriculum of [LETI](sigla_curso) for the [second semester](semestre).
+    - I want to see the subjects for [9295](codigo) in the [first semester](semestre).
+    - What are the classes in the [second semester](semestre) of [Mestrado em Robótica e Sistemas Inteligentes](curso)?
+    - Can you tell me the subjects included in the [first semester](semestre) of [9294](codigo)?
+    - Which disciplines belong to the [second semester](semestre) of [Licenciatura em Engenharia Eletrotécnica e de Computadores](curso)?
+    - Does [9281](codigo) have programming-related subjects in the [first semester](semestre)?
+
+# - intent: course_list
+#   examples: |
+#     - What [bachelor's](grau) degrees do you offer?
+#     - Show me all [master's](grau) programs.
+#     - Can you list your [undergraduate](grau) courses?
+#     - I'm interested in [postgraduate](grau) degrees.
+#     - Which [master's](grau) degrees are available at the department?
+#     - Which degrees include [Cálculo I](disciplina)?
+#     - I want to see all programs that have [LSD](disciplina).
+#     - Do any courses include [Compiladores](disciplina)?
+#     - Show degrees that include the subject [40433](disciplina).
+#     - What degrees contain [Cálculo II](disciplina) in the curriculum?
+#     - I want to know all [bachelor's](grau) degrees with [Sistemas Inteligentes](disciplina).
+#     - Which [master's](grau) programs include [IM](disciplina)?
+#     - Are there any [undergraduate](grau) courses that have [40756](disciplina)?
+#     - List [master's](grau) degrees that offer [Programação Orientada a Objetos](disciplina).
+#     - Do any [bachelor's](grau) programs cover [Fundamentos de Programação](disciplina)?
+#     - What courses are offered by the department?
+#     - Could you give me a list of all degrees available?
+#     - I want to see all the academic programs.
+#     - Which courses can I apply for?
+#     - List all available degrees in the department.
+
+# - intent: disciplina_list
+#   examples: |
+#     - What are the [MEI](curso) subjects?
+#     - Can you list all the courses in [LEI](curso)?
+#     - Show me the subjects for [Mestrado em Cibersegurança](curso)
+#     - I want to know the disciplines in [LECI](curso)
+#     - Which subjects are taught in [Mestrado em Engenharia Computacional](curso)?
+#     - What are the [MEI](curso) subjects for the [second semester](semestre)?
+#     - List [LEEC](curso) subjects for the [first semester](semestre)
+#     - Which subjects are in the [third semester](semestre) of [LECI](curso)?
+#     - Show me the [fourth semester](semestre) subjects of [LEI](curso)
+#     - What subjects are offered in the [first semester](semestre)?
+#     - I want to see all subjects for the [second semester](semestre)
+#     - Can you list all subjects from the [third semester](semestre)?
+#     - What are the subjects for the [bachelor's](grau) degree?
+#     - List all subjects available in [master's](grau) programs
+#     - Show me the subjects taught in [undergraduate](grau) degrees
+#     - Which courses are part of the [postgraduate](grau) programs?
+#     - What disciplines are included in the [bachelor's](grau) level?
+#     - What do you study in [LEA](curso) in the [first semester](semestre)?

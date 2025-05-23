@@ -1,0 +1,25 @@
+version: "3.1"
+
+nlu:
+- intent: something_nice
+  examples: |
+    - you are awesome
+    - you are the best
+    - you are great
+    - beautiful
+    - love you
+
+- intent: something_bad
+  examples: |
+    - you are bad
+    - you are stupid
+    - you are dumb
+    - hate you
+
+- intent: thanks
+  examples: |
+    - ty
+    - thank you
+    - thanks
+    - thank you so much
+    - thanks for your support

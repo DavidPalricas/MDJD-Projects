@@ -1,0 +1,23 @@
+version: "3.1"
+
+intents:
+  - something_nice
+  - something_bad
+  - thanks
+
+responses:
+  utter_something_nice:
+  - text: "I appreciate your kind words."
+  - text: "Thanks for the compliment!"
+  - text: "Your words mean a lot to me."
+
+  utter_something_bad:
+  - text: "Sorry, I will do my best next time."
+  - text: "I am here to help you."
+  - text: "I will try to improve."
+
+  utter_thanks:
+  - text: "You're welcome!"
+  - text: "No problem!"
+  - text: "Anytime!"
+  - text: "Glad to help!"

@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: Thanks for the compliment anytime the user says something nice
+  steps:
+  - intent: something_nice
+  - action: utter_something_nice
+
+- rule: Say sorry (or something cliché) anytime the user says something bad
+  steps:
+  - intent: something_bad
+  - action: utter_something_bad
+
+- rule: Say "You're welcome" anytime the user says thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks

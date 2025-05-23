@@ -1,0 +1,25 @@
+version: "3.1"
+
+intents:
+  - ask_points_of_interest
+  - provide_location
+  - choose_interest_type
+
+
+entities: 
+  - interest_type
+
+slots:
+  location:
+    type: text
+    mappings:
+      - type: custom
+  interest_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: interest_type
+
+actions:
+  - action_retrieve_location
+  - action_give_points_of_interest

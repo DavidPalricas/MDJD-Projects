@@ -1,0 +1,58 @@
+version: "3.1"
+nlu:
+- regex: email
+  examples: |
+    - [A-Za-z0-9._%+-]+@ua\.pt
+
+- regex: semestre
+  examples: |
+    - ([1-2])(st|nd)?\s*semester
+    - (first|second)\s*semester
+
+- regex: codigo
+  examples: |
+    - \d{4,5}
+
+- regex: sigla_disciplina
+  examples: |
+   - [A-Za-z]+-?[IVX]*
+#  - [A-Za-z]+-?[A-Za-z]*-?[IVX]*
+
+- lookup: grau
+  examples: |
+    - batchelor's
+    - batchelor
+    - master's
+    - master
+    - doctor's
+    - integrated master's
+
+- lookup: curso
+  examples: |
+    - mestrado integrado em engenharia electrónica e telecomunicações
+    - licenciatura em engenharia eletrotécnica e de computadores
+    - licenciatura em engenharia de computadores e informática
+    - licenciatura em engenharia informática
+    - licenciatura em engenharia aeroespacial
+    - mestrado em engenharia eletrónica e telecomunicações
+    - mestrado em engenharia de computadores e telemática
+    - mestrado em engenharia informática
+    - mestrado em engenharia de automação industrial
+    - mestrado em robótica e sistemas inteligentes
+    - mestrado em cibersegurança
+    - mestrado em engenharia computacional
+
+- lookup: sigla_curso
+  examples: |
+    - ET
+    - LECI
+    - LEI
+    - LEEC
+    - LEA
+    - MEET
+    - MECT
+    - MEI
+    - MEAI
+    - MRSI
+    - ciber
+    - computacional

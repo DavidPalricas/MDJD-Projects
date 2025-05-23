@@ -1,0 +1,128 @@
+version: "3.1"
+
+intents:
+  # generic info 
+  - course_info # LECI é cadeira de mestrado
+  - disciplina_info # em que semestre decorre SIO
+  - professor_info # qual é o gabinete do lsl 
+  - email_info # quem tem o email ..@..
+
+  # acronym
+  # - course_acronym # Curso LECI significa o que
+  # - disciplina_acronym #Cadeira RC2 significa o que
+
+  # list courses
+  - course_list_degree # que cursos de mestrado são oferecidos, que cursos são oferecidos
+  #- course_list_disciplina # que cursos têm Calculo
+
+  # list disciplinas (muitas disciplinas pedir ao user para ser mais especifico nas stories)
+  #- disciplina_list_professor # Que cadeiras o LSL rege 
+  # - disciplina_list_semeste # disciplinas de primeiro semestre quais são
+  - disciplina_list_course # LECI tem de estudar que cadeiras
+  # - disciplina_list_semeste_course
+  # - disciplina_list_grau # Cadeiras de Mestrado oferecidas 
+
+  # Adicionar codigo: que codigo é este?
+
+entities:
+- grau #lookup 
+- semestre #regex or lookup 
+- disciplina
+- curso # lookup 
+- sigla_disciplina #regex
+- sigla_curso #lookup 
+- professor
+- email #regex
+- codigo #regex
+
+slots:
+  grau:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: grau
+
+  semestre:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: semestre
+
+  disciplina:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: disciplina
+
+  curso:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: curso
+
+  sigla_disciplina:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: sigla_disciplina
+
+  sigla_curso:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: sigla_curso
+
+  professor:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: professor
+
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
+
+  codigo:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: codigo
+  
+
+responses:
+  # utter_course_list:
+  # - text: "I will list all {grau} degrees present in deti."
+
+  # utter_disciplina_list:
+  # - text: "This are the classes you will find in {curso} on the {semestre} semestre of your {grau} degree."
+
+  # utter_disciplina_list_semeste:
+  # - text: "disciplina_list_semeste: semestre-{semestre}."
+
+  # utter_disciplina_info:
+  # - text: "disciplina_info: cadeira-{cadeira}, codigo-{codigo}, sigla_cadeira-{sigla_cadeira}."
+
+  # utter_course_list_degree:
+  # - text: "course_list_degree: grau-{grau}."
+
+  utter_disciplina_list_course:
+  - text: "disciplina_list_course: curso-{curso}, codigo-{codigo}, sigla_curso-{sigla_curso}, semestre-{semestre}."
+
+actions:
+  - action_course_info
+  - action_disciplina_info
+  - action_professor_info
+  - action_email_info
+  - action_course_list_degree
+  - action_disciplina_list_course

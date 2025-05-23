@@ -1,6 +1,10 @@
 **/__pycache__/
 **/.env
+**/.venv/
+**/.rasa/cache
 
 # IntelligentSystemsII
 IntelligentSystemsII/StudyOfToolsII/saved_policy
 IntelligentSystemsII/StudyOfToolsII/logs
+IntelligentSystemsII/MP1-ConversionalAgent/assistant/models
+IntelligentSystemsII/MP1-ConversionalAgent/story_graph.dot

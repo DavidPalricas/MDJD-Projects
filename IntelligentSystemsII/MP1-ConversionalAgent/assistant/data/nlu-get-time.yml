@@ -1,0 +1,20 @@
+version: "3.1"
+
+nlu:
+- intent: ask_time
+  examples: |
+    - What time is it in [United States](GPE)?
+    - Can you tell me the time in [Japan](GPE)?
+    - What's the time in [Ukraine](GPE)?
+    - Give me the current time in [France](GPE).
+    - What is the time in [Portugal](GPE)?
+    - Tell me the time in [Australia](GPE).
+    - Show me the time in [USA](GPE).
+    - What is the current time in [UAE](GPE)?
+    - Time in [China](GPE)?
+    - Can you give me the time in [United Arab Emirates](GPE)?
+    - What's the local time in [Italy](GPE)?
+    - I want to know the time in [Germany](GPE).
+    - Tell me the time in [Azores](GPE).
+    - Can you show me the time in [South Korea](GPE)?
+    - What is the time in [Mexico](GPE)?

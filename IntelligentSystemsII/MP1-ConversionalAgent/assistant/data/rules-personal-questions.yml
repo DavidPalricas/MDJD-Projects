@@ -1,0 +1,41 @@
+version: "3.1"
+rules:
+  - rule: identity_ask
+    steps:
+      - intent: ask_identity
+      - action: utter_ask_identity
+
+  - rule: age_ask
+    steps:
+      - intent: ask_age
+      - action: action_give_age
+
+  - rule: home_ask
+    steps:
+      - intent: ask_home
+      - action: utter_ask_home
+
+  - rule: hobby_ask
+    steps:
+      - intent: ask_hobby
+      - action: utter_ask_hobby
+
+  - rule: favorite_color_ask
+    steps:
+      - intent: ask_favorite_color
+      - action: utter_ask_favorite_color
+
+  - rule: favorite_food_ask
+    steps:
+      - intent: ask_favorite_food
+      - action: utter_ask_favorite_food
+
+  - rule: favorite_movie_ask
+    steps:
+      - intent: ask_favorite_movie
+      - action: utter_ask_favorite_movie
+
+  - rule: favorite_tv_show_ask
+    steps:
+      - intent: ask_favorite_tv_show
+      - action: utter_ask_favorite_tv_show

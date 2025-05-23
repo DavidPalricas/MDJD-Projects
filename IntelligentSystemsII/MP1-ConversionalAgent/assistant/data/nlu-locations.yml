@@ -1,0 +1,114 @@
+version: "3.1"
+
+nlu:
+- intent: ask_points_of_interest
+  examples: |
+    - Give me some points of interest in New York.
+    - What are the points of interest in Paris?
+    - Give me some recommendations for Rome location.
+    - Show me the nearest attraction.
+    - Give me some places to visit near me.
+    
+- intent: provide_location
+  examples: |
+    - I am in London.
+    - I live in Tokyo.
+    - I am currently in Berlin.
+    - I am located in San Francisco location.
+    - I am in Los Angeles
+    - I am in Chicago.
+    - I am in Miami.
+
+
+- intent: choose_interest_type
+  examples: |
+    - I want to see [museums](interest_type).
+    - Show me [restaurant](interest_type).
+    - I am looking for [parks](interest_type).
+    - I want to visit [historical sites](interest_type).
+    - I want to see [art galleries](interest_type).
+    - I want to see [theaters](interest_type).
+    - I want to see [zoos](interest_type).
+    - I want to dinner at [restaurants](interest_type) in Aveiro.~
+    - I would love to see [museums](interest_type) in Lisbon.
+    - I need to find [hotels](interest_type) in Berlin.
+    - I want to see [landmarks](interest_type) in Paris.
+
+
+- lookup: interest_type
+  examples: |
+    - hotel
+    - hotels
+    - lodging
+    - lodgings
+    - hostel
+    - hostels
+    - motel
+    - motels
+    - restaurant
+    - restaurants
+    - cafe
+    - cafes
+    - diner
+    - diners
+    - bakery
+    - bakeries
+    - museum
+    - museums
+    - art gallery
+    - art galleries
+    - tourist attraction
+    - tourist attractions
+    - landmark
+    - landmarks
+    - pharmacy
+    - pharmacies
+    - drugstore
+    - drugstores
+    - hospital
+    - hospitals
+    - clinic
+    - clinics
+    - shopping mall
+    - shopping malls
+    - supermarket
+    - supermarkets
+    - convenience store
+    - convenience stores
+    - park
+    - parks
+    - zoo
+    - zoos
+    - aquarium
+    - aquariums
+    - cinema
+    - cinemas
+    - movie theater
+    - movie theaters
+    - airport
+    - airports
+    - train station
+    - train stations
+    - bus station
+    - bus stations
+    - subway
+    - subways
+    - gas station
+    - gas stations
+    - atm
+    - atms
+    - bank
+    - banks
+    - police
+    - churches
+    - church
+    - temple
+    - temples
+    - mosque
+    - mosques
+    - stadium
+    - stadiums
+    - gym
+    - gyms
+    - spa
+    - spas

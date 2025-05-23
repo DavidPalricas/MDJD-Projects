@@ -1,0 +1,46 @@
+version: "3.1"
+
+nlu:
+- intent: tell_favorite_media
+  examples: |
+    - My favorite [movie](media_type) is [Cars 3](media_name).
+    - I love the [book](media_type) [Renegades](media_name).
+    - The name of my favorite [music](media_type) is [Monody](media_name).
+    - I enjoyed [Inside Job](media_name), my favorite [show](media_type).
+    - My favorite [podcast](media_type) is called [Trash Taste](media_name).
+    - I like the [game](media_type) [Minecraft](media_name).
+    - My favorite [music](media_type) is [Natlan](media_name).
+    - I love the [show](media_type) [Pantheon](media_name).
+    - The name of my favorite [podcast](media_type) is [De Billy a Besta](media_name).
+    - I enjoyed [Portal 2](media_name), my favorite [game](media_type).
+    - My favorite [movie](media_type) is called [Miraculous World Paris](media_name).
+    - I like the [book](media_type) [You've Reached Sam](media_name).
+  
+- intent: ask_favorite_media
+  examples: |
+    - What is my favorite [movie](media_type)?
+    - Can you tell me my favorite [music](media_type)?
+    - What is the name of my favorite [book](media_type)?
+    - Do you know my favorite [show](media_type)?
+    - You remember my favorite [podcast](media_type)?
+    - Can you remind me of my favorite [game](media_type)?
+    - What is my favorite [book](media_type)?
+    - Can you tell me my favorite [show](media_type)?
+    - What is the name of my favorite [podcast](media_type)?
+    - Do you know my favorite [game](media_type)?
+    - You remember my favorite [movie](media_type)?
+    - Can you remind me of my favorite [music](media_type)?
+
+
+- lookup: media_type
+  examples: |
+    - movie
+    - music
+    - book
+    - show
+    - podcast
+    - game
+
+- regex: media_name
+  examples: |
+    - [\w\d\s]+

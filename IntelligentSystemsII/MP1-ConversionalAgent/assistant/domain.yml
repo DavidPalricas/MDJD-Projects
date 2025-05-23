@@ -1,0 +1,34 @@
+version: "3.1"
+
+intents:
+  - goodbye
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDg3Ym95cWZmdDlwdmt1OGR1emY2MXgxaTA3YmE1cWh2aDVpdjNxaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yFQ0ywscgobJK/giphy.gif"
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Awesome! Keep it up!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "See you!"
+  - text: "Goodbye"
+  - text: "Have a nice day!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_fallback:
+  - text: "Sorry, I can't help you with that."
+  - text: "I am not sure what you mean."
+  - text: "I am not sure how to respond to that."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

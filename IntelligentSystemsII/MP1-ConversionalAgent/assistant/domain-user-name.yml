@@ -1,0 +1,47 @@
+version: "3.1"
+
+actions:
+  - action_greet
+  - action_set_name
+  - action_show_name
+
+intents:
+  - greet
+  - provide_name
+  - ask_user_name
+
+entities:
+  - PERSON
+
+slots:
+  user_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet_no_name:
+  - text: "Hey! How are you?"
+  - text: "Hello! How are you doing?"
+  - text: "Hi! How can I help you?"
+
+  utter_greet_with_name:
+  - text: "Hey {user_name}! How are you?"
+  - text: "Hello {user_name}! How are you doing?"
+  - text: "Hi {user_name}! How can I help you?"
+
+  utter_provided_name:
+  - text: "Nice to meet you, {user_name}!"
+  - text: "Thanks for sharing your name, {user_name}!"
+
+  utter_show_name:
+  - text: "{user_name}"
+  - text: "Your name is {user_name}."
+  - text: "I remember your name is {user_name}."
+  - text: "You told me your name is {user_name}."
+  
+  utter_ask_user_name:
+  - text: "What is your name?"
+  - text: "I don't know your name yet. What is it?"
+  - text: "Could you please tell me your name?"

@@ -1,0 +1,13 @@
+version: "3.1"
+
+rules:
+
+- rule: Set favorite media
+  steps:
+  - intent: tell_favorite_media
+  - action: action_set_favorite_media
+
+- rule: Show favorite media
+  steps:
+  - intent: ask_favorite_media
+  - action: action_show_favorite_media

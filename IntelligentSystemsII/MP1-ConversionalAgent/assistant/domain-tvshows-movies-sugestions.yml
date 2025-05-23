@@ -1,0 +1,31 @@
+version: "3.1"
+
+intents:
+  - ask_tv_show_suggestions
+  - ask_movie_suggestions
+  - provide_media_genre
+
+entities:
+  - media_genre
+
+slots:
+  media_genre:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: media_genre
+
+  is_movie:
+    type: bool
+    mappings:
+      - type: from_intent
+        value: true
+        intent: ask_movie_suggestions
+      - type: from_intent
+        value: false
+        intent: ask_tv_show_suggestions
+
+actions:
+    - action_ask_media_genre
+    - action_recommend_media
+  

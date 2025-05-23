@@ -1,0 +1,48 @@
+version: "3.1"
+
+rules:
+
+# - rule: course_list
+#   steps:
+#   - intent: course_list
+#   - action: utter_course_list
+
+# - rule: disciplina_list
+#   steps:
+#   - intent: disciplina_list
+#   - action: utter_disciplina_list
+
+- rule: ask_about_course
+  steps:
+  - intent: course_info
+  - action: action_course_info
+  
+- rule: ask_about_disciplina
+  steps:
+  - intent: disciplina_info
+  - action: action_disciplina_info
+
+- rule: ask_about_professor
+  steps:
+  - intent: professor_info
+  - action: action_professor_info
+
+- rule: ask_about_email
+  steps:
+  - intent: email_info
+  - action: action_email_info
+
+- rule: course_list_degree
+  steps:
+  - intent: course_list_degree
+  - action: action_course_list_degree
+
+- rule: disciplina_list_course
+  steps:
+  - intent: disciplina_list_course
+  - action: action_disciplina_list_course
+
+# - rule: disciplina_list_semeste
+#   steps:
+#   - intent: disciplina_list_semeste
+#   - action: utter_disciplina_list_semeste

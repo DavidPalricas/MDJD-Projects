@@ -1,0 +1,85 @@
+version : "3.1"
+
+nlu:
+- intent: ask_identity
+  examples: |
+    - Who are you
+    - Who are you?
+    - What is your name?
+    - Can you tell me about yourself?
+    - Introduce yourself.
+    - What do you call yourself?
+    - What should I call you?
+
+- intent: ask_age
+  examples: |
+    - How old are you?
+    - What is your age?
+    - When were you created?
+    - When were you born?
+
+- intent: ask_home
+  examples: |
+    - Where do you live?
+    - Where are you from?
+    - What is your home?
+    - Where is your home?
+    - Where do you reside?
+
+
+- intent: ask_hobby
+  examples: |
+    - What is your hobby?
+    - What do you like to do in your free time?
+    - Do you have any hobbies?
+    - What are your interests?
+    - What do you enjoy doing?
+    - What do you like to do?
+    - What are your hobbies?
+    - What do you do for fun?
+    - What do you like to do for fun?
+    - What do you do in your spare time?
+
+- intent: ask_favorite_color
+  examples: |
+    - What is your favorite color?
+    - Do you have a favorite color?
+    - What color do you like the most?
+    - What color do you prefer?
+    - What is your preferred color?
+    - What color do you like?
+
+- intent: ask_favorite_food
+  examples: |
+    - What is your favorite food?
+    - Do you have a favorite food?
+    - What food do you like the most?
+    - What food do you prefer?
+    - What is your preferred food?
+    - What food do you like?
+    - What is your favorite dish?
+    - What is your favorite meal?
+    - What is your favorite snack?
+
+
+- intent: ask_favorite_movie
+  examples: |
+    - What is your favorite movie?
+    - Do you have a favorite movie?
+    - What movie do you like the most?
+    - What movie do you prefer?
+    - What is your preferred movie?
+    - What movie do you like?
+    - What is your favorite film?
+    - What is your favorite show?
+
+
+- intent: ask_favorite_tv_show
+  examples: |
+    - What is your favorite TV show?
+    - Do you have a favorite TV show?
+    - What TV show do you like the most?
+    - What TV show do you prefer?
+    - What is your preferred TV show?
+    - What TV show do you like?
+    - What is your favorite series?

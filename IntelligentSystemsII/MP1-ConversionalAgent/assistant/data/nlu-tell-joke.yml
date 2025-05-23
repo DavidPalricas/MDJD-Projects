@@ -1,0 +1,10 @@
+version: "3.1"
+
+nlu:
+- intent: tell_joke
+  examples: |
+    - Tell me a joke
+    - Make me laugh
+    - Give me a funny joke
+    - Say something funny
+    - Do you know any jokes?
