@@ -2,9 +2,13 @@
 **/.env
 **/.venv/
 **/.rasa/cache
+*.log
 
 # IntelligentSystemsII
 IntelligentSystemsII/StudyOfToolsII/saved_policy
 IntelligentSystemsII/StudyOfToolsII/logs
 IntelligentSystemsII/MP1-ConversionalAgent/assistant/models
 IntelligentSystemsII/MP1-ConversionalAgent/story_graph.dot
+IntelligentSystemsII/MP2-RLAgent/policy
+IntelligentSystemsII/MP2-RLAgent/logs
+IntelligentSystemsII/MP2-RLAgent/highscores.json
