@@ -1,6 +1,9 @@
 # Reinforcement Learning Agent to play the Snake Game 
 The goal of this project was to develop an agent capable of learning to play a modified version of the Snake game using reinforcement learning. This customized Snake game was designed by Professor Diogo Gomes as part of a project for the Artificial Intelligence and Intelligent Systems I modules at University of Aveiro, where students were tasked with creating agents employing AI search algorithms to play this game effectively.
 
+## Note
+Please read our report to understand the results achieved by this agent and its architecture.
+
 ## Prerequisites
 * Python 3.11 (Versions below or above may not work - tested with 3.10 and 3.11)
 * Linux system
