@@ -1,0 +1,11 @@
+Aqui estão as minhas funcionalidades por gestos que posso realizar e como utilizá-las:
+
+Dar like em vídeos
+O que eu faço: Dou like num vídeo
+Exemplo: "Você faz um gesto com pulgar virado para cima, com a mão a frente do seu peito"
+
+Dar dislike em vídeos
+O que eu faço: Dou dislike num vídeo
+Exemplo: "Você faz um gesto com pulgar virado para baixo, com a mão a frente do seu peito"
+
+Mais funcionalidades de gestos estão disponivéis na modalidade de fusão.

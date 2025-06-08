@@ -1,0 +1,30 @@
+As funcionalidades de fusão podem ser dividas em duas categorias redundantes, você pode executar por voz ou gestos ou complementares você tem de executar através de gestos e voz
+
+Aqui estã a minha funcionalidade redundante
+
+Meter um vídeo em ecrã normal ou ecrã cheio
+O que eu faço: Entro ou saio de ecrã cheio de um vídeo
+
+Exemplo por voz:
+    Ecrã cheio: Ecrã cheio por favor
+    Ecrã Normal: Ecrã normal por favor
+
+Exemplo por gesto:
+    Ecrã Cheio: Junte as suas mão a frente do seu peito e estique os seus braços na diagonal mantendo as suas mão fechadas, quando não consegui -los esticar-los mais abra as suas mãos.
+    Ecrã Normal: Estique os braços na diagonal até não conseguir mais, com as suas mãos abertas e lentamente aproxime os seus braços ao seu peito quando tiver as suas mão a frente do seu peito junte-as. 
+    
+Aqui estão as minhas funcionalidades complementares
+
+Alterar volume de um vídeo do Youtube
+O que eu faço: Aumento e Diminuio um o volume de um vídeo do Youtube
+
+Exemplo:
+     Aumentar volume: Comece por estender um dos seus braços para o lado a nível da sua cintura e eleve-o até a sua cabeça. A seguir diga algo como aumenta um pouco o volume.
+     Dimnuir volume: Estique o seu braço até a sua cabeça e baixe-o de lado, lentamente até altura da sua cintura. A seguir diga algo como diminui o volume do vídeo.
+
+Scroll
+O que eu faço: Dou scroll para cima ou para baixo na página do Youtube, dependendo da direção indicada.
+
+Exemplo: 
+    Para cima: Estique um dos seus braços para frente e estenda o outro para baixo, com a palma da mão aberta. Eleve-o lentamente até o seu peito. A seguir diga algo como dá scroll um pouco para cima.
+    Para baixo: Estique um dos seus braços para frente e estenda o outro para cima, com a palma da mão aberta. Baixe-o lentamente até o seu peito. A seguir diga algo como dá scroll mais um bocado para baixo.

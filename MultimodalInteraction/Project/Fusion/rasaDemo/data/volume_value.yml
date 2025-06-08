@@ -1,0 +1,21 @@
+version "3.1":
+  nlu:
+  - lookup: volume_value
+    examples: |
+     - pouco
+     - um pouco 
+     - um pouquinho
+     - uma beca
+     - pedaço
+     - um pedaço
+     - um bocado
+     - mais
+     - mais um pouco
+     - mais um bocado
+     - mais um pedaço
+     - mais um pouquinho
+     - mais um pouco
+     - mais um bocado
+     - máximo
+     - mínimo
+     

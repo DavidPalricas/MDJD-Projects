@@ -1,0 +1,51 @@
+Aqui estão as minhas funcionalidades por voz que posso realizar e como utilizá-las:
+
+Pesquisar vídeos
+O que eu faço: Procuro vídeos baseados no tema solicitado.
+Exemplo: "Pesquise pelo vídeo Despacito."
+
+Reproduzir ou Parar um vídeo
+O que eu faço: Reproduzo ou paro o vídeo que você selecionou.
+Exemplo: "Continue com o vídeo.” ou ”Pause o vídeo.”
+
+Ativar ou Desativar o som de um vídeo
+O que eu faço: Ativo ou desativo o som do vídeo em reprodução
+Exemplo: "Silencia o vídeo por favor." ou "Ative o som."
+
+Ativar ou Desativar legendas de um vídeo
+O que eu faço: Ativo ou desativo as legendas do vídeo em reprodução.
+Exemplo: "Ative as legendas deste vídeo." ou "Desative as legendas."
+
+Alterar a velocidade de reprodução de um vídeo
+O que eu faço: Altero a velocidade do vídeo para um valor específicoou diminuiu ou aumento esta velocidade para um valor específico ou não
+Exemplo: "Altera a velocidade do vídeo para 1.5" "Aumente a velocidade do vídeo." ou "Reduza a velocidade do vídeo em 0.75."
+
+Guardar um vídeo numa playlist
+O que eu faço: Adiciono o vídeo à playlist que você escolher.
+Exemplo:  "Guarde este vídeo na playlist favoritos."
+
+Comentar num vídeos
+O que eu faço: Escrevo um comentário no vídeo em reprodução
+Exemplo: "Comenta Gostei muito deste vídeo"
+
+Subscrever ou cancelar a inscrição do canal do vídeo selecionado
+O que eu faço: Inscrevo você no canal ou cancelo sua inscrição.
+Exemplo: "Subscreve o canal." ou "Cancela a subscrição."
+
+Avançar ou recuar x tempo num vídeo
+O que eu faço: Avanço ou recuo num vídeo num valor especificado pelo utilizador
+Exemplo: "Avance 10 segundos." ou "Recua 15 segundos."
+
+Partilhar vídeos
+O que eu faço: Partilho vídeos com um dos seus contactos via Whatsapp
+Exemplo: "Partilha o vídeo com o Artur."
+
+Comando de Ajuda
+O que eu faço: Forneço as minhas funcionalidades e exemplos de usos destas para cada modalidade.
+Exemplo: "Preciso de ajuda"
+
+Desligar o assistente
+O que eu faço: Desligo-me
+Exemplo: "Adeus Assistente."
+
+Mais funcionalidades de voz podem estar disponivéis na modalidade de fusão.

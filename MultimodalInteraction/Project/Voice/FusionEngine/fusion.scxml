@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" xmlns:commons="http://commons.apache.org/scxml" xmlns:emma="http://www.w3.org/2003/04/emma" xmlns:mmi="http://www.w3.org/2008/04/mmi-arch" xmlns:schemaLocation="http://www.w3.org/2005/07/scxml scxml.xsd http://commons.apache.org/scxml commons.xsd http://www.w3.org/2008/04/mmi-arch mmi.xsd http://www.w3.org/2003/04/emma emma.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" initialstate="init">
+  <datamodel>
+    <data name="data1" />
+    <data name="data2" />
+  </datamodel>
+  <state id="init">
+    <onentry>
+      <log label="[init]" expr="READY" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="main">
+    <onentry>
+      <log label="[main]" expr="READY" />
+    </onentry>
+    <transition target="stouch[touch][location][bedroom]" event="[TOUCH][LOCATION][BEDROOM]" />
+    <transition target="sspeech[speech][light][off][location][dinnerroom]" event="[SPEECH][LIGHT][OFF][LOCATION][DINNERROOM]" />
+    <transition target="stouch[touch][location][livingroom]" event="[TOUCH][LOCATION][LIVINGROOM]" />
+    <transition target="sspeech[speech][temperature][down]" event="[SPEECH][TEMPERATURE][DOWN]" />
+    <transition target="stouch[touch][location][wc]" event="[TOUCH][LOCATION][WC]" />
+    <transition target="sspeech[speech][light][off][location][wc]" event="[SPEECH][LIGHT][OFF][LOCATION][WC]" />
+    <transition target="sspeech[speech][temperature][up]" event="[SPEECH][TEMPERATURE][UP]" />
+    <transition target="sspeech[speech][light][off][location][bedroom]" event="[SPEECH][LIGHT][OFF][LOCATION][BEDROOM]" />
+    <transition target="stouch[touch][location][kitchen]" event="[TOUCH][LOCATION][KITCHEN]" />
+    <transition target="sspeech[speech][light][on][location][wc]" event="[SPEECH][LIGHT][ON][LOCATION][WC]" />
+    <transition target="sspeech[speech][light][on][location][kitchen]" event="[SPEECH][LIGHT][ON][LOCATION][KITCHEN]" />
+    <transition target="stouch[touch][location][dinnerroom]" event="[TOUCH][LOCATION][DINNERROOM]" />
+    <transition target="sspeech[speech][light][on]" event="[SPEECH][LIGHT][ON]" />
+    <transition target="sspeech[speech][light][on][location][dinnerroom]" event="[SPEECH][LIGHT][ON][LOCATION][DINNERROOM]" />
+    <transition target="sspeech[speech][light][on][location][bedroom]" event="[SPEECH][LIGHT][ON][LOCATION][BEDROOM]" />
+    <transition target="sspeech[speech][light][whereq]" event="[SPEECH][LIGHT][WHEREQ]" />
+    <transition target="sspeech[speech][light][on][location][room]" event="[SPEECH][LIGHT][ON][LOCATION][ROOM]" />
+    <transition target="sspeech[speech][light][off]" event="[SPEECH][LIGHT][OFF]" />
+    <transition target="sspeech[speech][light][off][location][kitchen]" event="[SPEECH][LIGHT][OFF][LOCATION][KITCHEN]" />
+    <transition target="sspeech[speech][light][off][location][livingroom]" event="[SPEECH][LIGHT][OFF][LOCATION][LIVINGROOM]" />
+    <transition target="sspeech[speech][light][off][location][room]" event="[SPEECH][LIGHT][OFF][LOCATION][ROOM]" />
+    <transition target="stouch[touch][location][room]" event="[TOUCH][LOCATION][ROOM]" />
+    <transition target="sspeech[speech][light][on][location][livingroom]" event="[SPEECH][LIGHT][ON][LOCATION][LIVINGROOM]" />
+  </state>
+  <state id="stouch[touch][location][bedroom]">
+    <onentry>
+      <log label="[stouch[touch][location][bedroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-stouch[touch][location][bedroom]" event="timeout-stouch[touch][location][bedroom]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-stouch[touch][location][bedroom]" />
+    <transition target="stouch[touch][location][bedroom]-speech[speech][light][on]" event="[SPEECH][LIGHT][ON]" />
+    <transition target="stouch[touch][location][bedroom]-speech[speech][light][off]" event="[SPEECH][LIGHT][OFF]" />
+    <onexit>
+      <cancel sendid="state1-timer-stouch[touch][location][bedroom]" />
+    </onexit>
+  </state>
+  <state id="stouch[touch][location][bedroom]-speech[speech][light][on]">
+    <onentry>
+      <log label="[stouch[touch][location][bedroom]-speech[speech][light][on]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][BEDROOM][ON]')}" />
+      <send event="LIGHT_BEDROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][bedroom]-speech[speech][light][off]">
+    <onentry>
+      <log label="[stouch[touch][location][bedroom]-speech[speech][light][off]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][BEDROOM][OFF]')}" />
+      <send event="LIGHT_BEDROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off][location][dinnerroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][off][location][dinnerroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][off][location][dinnerroom]" event="timeout-sspeech[speech][light][off][location][dinnerroom]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][off][location][dinnerroom]-final" event="timeout-sspeech[speech][light][off][location][dinnerroom]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][off][location][dinnerroom]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][off][location][dinnerroom]-final">
+    <onentry>
+      <log label="[speech[speech][light][off][location][dinnerroom]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][DINNERROOM][OFF]')}" />
+      <send event="LIGHT_DINNERROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][livingroom]">
+    <onentry>
+      <log label="[stouch[touch][location][livingroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-stouch[touch][location][livingroom]" event="timeout-stouch[touch][location][livingroom]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="touch[touch][location][livingroom]-final" event="timeout-stouch[touch][location][livingroom]" />
+    <transition target="stouch[touch][location][livingroom]-speech[speech][light][on]" event="[SPEECH][LIGHT][ON]" />
+    <transition target="stouch[touch][location][livingroom]-speech[speech][light][off]" event="[SPEECH][LIGHT][OFF]" />
+    <transition target="stouch[touch][location][livingroom]-speech[speech][temperature][up]" event="[SPEECH][TEMPERATURE][UP]" />
+    <transition target="stouch[touch][location][livingroom]-speech[speech][temperature][down]" event="[SPEECH][TEMPERATURE][DOWN]" />
+    <onexit>
+      <cancel sendid="state1-timer-stouch[touch][location][livingroom]" />
+    </onexit>
+  </state>
+  <state id="touch[touch][location][livingroom]-final">
+    <onentry>
+      <log label="[touch[touch][location][livingroom]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LOCATION][LIVINGROOM]')}" />
+      <send event="LOCATION_LIVINGROOM" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][livingroom]-speech[speech][light][on]">
+    <onentry>
+      <log label="[stouch[touch][location][livingroom]-speech[speech][light][on]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][LIVINGROOM][ON]')}" />
+      <send event="LIGHT_LIVINGROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][livingroom]-speech[speech][light][off]">
+    <onentry>
+      <log label="[stouch[touch][location][livingroom]-speech[speech][light][off]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][LIVINGROOM][OFF]')}" />
+      <send event="LIGHT_LIVINGROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][livingroom]-speech[speech][temperature][up]">
+    <onentry>
+      <log label="[stouch[touch][location][livingroom]-speech[speech][temperature][up]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][LIVINGROOM][UP]')}" />
+      <send event="TEMP_LIVINGROOM_UP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][livingroom]-speech[speech][temperature][down]">
+    <onentry>
+      <log label="[stouch[touch][location][livingroom]-speech[speech][temperature][down]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][LIVINGROOM][DOWN]')}" />
+      <send event="TEMP_LIVINGROOM_DOWN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][down]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][down]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][temperature][down]" event="timeout-sspeech[speech][temperature][down]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][temperature][down]-final" event="timeout-sspeech[speech][temperature][down]" />
+    <transition target="sspeech[speech][temperature][down]-touch[touch][location][livingroom]" event="[TOUCH][LOCATION][LIVINGROOM]" />
+    <transition target="sspeech[speech][temperature][down]-touch[touch][location][room]" event="[TOUCH][LOCATION][ROOM]" />
+    <transition target="sspeech[speech][temperature][down]-touch[touch][location][kitchen]" event="[TOUCH][LOCATION][KITCHEN]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][temperature][down]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][temperature][down]-final">
+    <onentry>
+      <log label="[speech[speech][temperature][down]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][TEMPERATURE][DOWN]')}" />
+      <send event="TEMP_DOWN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][down]-touch[touch][location][livingroom]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][down]-touch[touch][location][livingroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][LIVINGROOM][DOWN]')}" />
+      <send event="TEMP_LIVINGROOM_DOWN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][down]-touch[touch][location][room]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][down]-touch[touch][location][room]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][ROOM][DOWN]')}" />
+      <send event="TEMP_ROOM_DOWN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][down]-touch[touch][location][kitchen]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][down]-touch[touch][location][kitchen]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][KITCHEN][DOWN]')}" />
+      <send event="TEMP_KITCHEN_DOWN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][wc]">
+    <onentry>
+      <log label="[stouch[touch][location][wc]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-stouch[touch][location][wc]" event="timeout-stouch[touch][location][wc]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-stouch[touch][location][wc]" />
+    <transition target="stouch[touch][location][wc]-speech[speech][light][on]" event="[SPEECH][LIGHT][ON]" />
+    <transition target="stouch[touch][location][wc]-speech[speech][light][off]" event="[SPEECH][LIGHT][OFF]" />
+    <onexit>
+      <cancel sendid="state1-timer-stouch[touch][location][wc]" />
+    </onexit>
+  </state>
+  <state id="stouch[touch][location][wc]-speech[speech][light][on]">
+    <onentry>
+      <log label="[stouch[touch][location][wc]-speech[speech][light][on]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][WC][ON]')}" />
+      <send event="LIGHT_WC_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][wc]-speech[speech][light][off]">
+    <onentry>
+      <log label="[stouch[touch][location][wc]-speech[speech][light][off]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][WC][OFF]')}" />
+      <send event="LIGHT_WC_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off][location][wc]">
+    <onentry>
+      <log label="[sspeech[speech][light][off][location][wc]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][off][location][wc]" event="timeout-sspeech[speech][light][off][location][wc]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][off][location][wc]-final" event="timeout-sspeech[speech][light][off][location][wc]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][off][location][wc]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][off][location][wc]-final">
+    <onentry>
+      <log label="[speech[speech][light][off][location][wc]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][WC][OFF]')}" />
+      <send event="LIGHT_WC_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][up]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][up]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][temperature][up]" event="timeout-sspeech[speech][temperature][up]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][temperature][up]-final" event="timeout-sspeech[speech][temperature][up]" />
+    <transition target="sspeech[speech][temperature][up]-touch[touch][location][livingroom]" event="[TOUCH][LOCATION][LIVINGROOM]" />
+    <transition target="sspeech[speech][temperature][up]-touch[touch][location][room]" event="[TOUCH][LOCATION][ROOM]" />
+    <transition target="sspeech[speech][temperature][up]-touch[touch][location][kitchen]" event="[TOUCH][LOCATION][KITCHEN]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][temperature][up]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][temperature][up]-final">
+    <onentry>
+      <log label="[speech[speech][temperature][up]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][TEMPERATURE][UP]')}" />
+      <send event="TEMP_UP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][up]-touch[touch][location][livingroom]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][up]-touch[touch][location][livingroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][LIVINGROOM][UP]')}" />
+      <send event="TEMP_LIVINGROOM_UP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][up]-touch[touch][location][room]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][up]-touch[touch][location][room]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][ROOM][UP]')}" />
+      <send event="TEMP_ROOM_UP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][temperature][up]-touch[touch][location][kitchen]">
+    <onentry>
+      <log label="[sspeech[speech][temperature][up]-touch[touch][location][kitchen]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][KITCHEN][UP]')}" />
+      <send event="TEMP_KITCHEN_UP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off][location][bedroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][off][location][bedroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][off][location][bedroom]" event="timeout-sspeech[speech][light][off][location][bedroom]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][off][location][bedroom]-final" event="timeout-sspeech[speech][light][off][location][bedroom]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][off][location][bedroom]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][off][location][bedroom]-final">
+    <onentry>
+      <log label="[speech[speech][light][off][location][bedroom]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][BEDROOM][OFF]')}" />
+      <send event="LIGHT_BEDROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][kitchen]">
+    <onentry>
+      <log label="[stouch[touch][location][kitchen]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-stouch[touch][location][kitchen]" event="timeout-stouch[touch][location][kitchen]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="touch[touch][location][kitchen]-final" event="timeout-stouch[touch][location][kitchen]" />
+    <transition target="stouch[touch][location][kitchen]-speech[speech][light][on]" event="[SPEECH][LIGHT][ON]" />
+    <transition target="stouch[touch][location][kitchen]-speech[speech][light][off]" event="[SPEECH][LIGHT][OFF]" />
+    <transition target="stouch[touch][location][kitchen]-speech[speech][temperature][up]" event="[SPEECH][TEMPERATURE][UP]" />
+    <transition target="stouch[touch][location][kitchen]-speech[speech][temperature][down]" event="[SPEECH][TEMPERATURE][DOWN]" />
+    <onexit>
+      <cancel sendid="state1-timer-stouch[touch][location][kitchen]" />
+    </onexit>
+  </state>
+  <state id="touch[touch][location][kitchen]-final">
+    <onentry>
+      <log label="[touch[touch][location][kitchen]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LOCATION][KITCHEN]')}" />
+      <send event="LOCATION_KITCHEN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][kitchen]-speech[speech][light][on]">
+    <onentry>
+      <log label="[stouch[touch][location][kitchen]-speech[speech][light][on]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][KITCHEN][ON]')}" />
+      <send event="LIGHT_KITCHEN_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][kitchen]-speech[speech][light][off]">
+    <onentry>
+      <log label="[stouch[touch][location][kitchen]-speech[speech][light][off]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][KITCHEN][OFF]')}" />
+      <send event="LIGHT_KITCHEN_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][kitchen]-speech[speech][temperature][up]">
+    <onentry>
+      <log label="[stouch[touch][location][kitchen]-speech[speech][temperature][up]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][KITCHEN][UP]')}" />
+      <send event="TEMP_KITCHEN_UP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][kitchen]-speech[speech][temperature][down]">
+    <onentry>
+      <log label="[stouch[touch][location][kitchen]-speech[speech][temperature][down]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][KITCHEN][DOWN]')}" />
+      <send event="TEMP_KITCHEN_DOWN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on][location][wc]">
+    <onentry>
+      <log label="[sspeech[speech][light][on][location][wc]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][on][location][wc]" event="timeout-sspeech[speech][light][on][location][wc]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][on][location][wc]-final" event="timeout-sspeech[speech][light][on][location][wc]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][on][location][wc]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][on][location][wc]-final">
+    <onentry>
+      <log label="[speech[speech][light][on][location][wc]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][WC][ON]')}" />
+      <send event="LIGHT_WC_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on][location][kitchen]">
+    <onentry>
+      <log label="[sspeech[speech][light][on][location][kitchen]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][on][location][kitchen]" event="timeout-sspeech[speech][light][on][location][kitchen]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][on][location][kitchen]-final" event="timeout-sspeech[speech][light][on][location][kitchen]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][on][location][kitchen]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][on][location][kitchen]-final">
+    <onentry>
+      <log label="[speech[speech][light][on][location][kitchen]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][KITCHEN][ON]')}" />
+      <send event="LIGHT_KITCHEN_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][dinnerroom]">
+    <onentry>
+      <log label="[stouch[touch][location][dinnerroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-stouch[touch][location][dinnerroom]" event="timeout-stouch[touch][location][dinnerroom]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-stouch[touch][location][dinnerroom]" />
+    <transition target="stouch[touch][location][dinnerroom]-speech[speech][light][on]" event="[SPEECH][LIGHT][ON]" />
+    <transition target="stouch[touch][location][dinnerroom]-speech[speech][light][off]" event="[SPEECH][LIGHT][OFF]" />
+    <onexit>
+      <cancel sendid="state1-timer-stouch[touch][location][dinnerroom]" />
+    </onexit>
+  </state>
+  <state id="stouch[touch][location][dinnerroom]-speech[speech][light][on]">
+    <onentry>
+      <log label="[stouch[touch][location][dinnerroom]-speech[speech][light][on]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][LIVINGROOM][ON]')}" />
+      <send event="LIGHT_LIVINGROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][dinnerroom]-speech[speech][light][off]">
+    <onentry>
+      <log label="[stouch[touch][location][dinnerroom]-speech[speech][light][off]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][LIVINGROOM][OFF]')}" />
+      <send event="LIGHT_LIVINGROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on]">
+    <onentry>
+      <log label="[sspeech[speech][light][on]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][on]" event="timeout-sspeech[speech][light][on]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][on]-final" event="timeout-sspeech[speech][light][on]" />
+    <transition target="sspeech[speech][light][on]-touch[touch][location][livingroom]" event="[TOUCH][LOCATION][LIVINGROOM]" />
+    <transition target="sspeech[speech][light][on]-touch[touch][location][room]" event="[TOUCH][LOCATION][ROOM]" />
+    <transition target="sspeech[speech][light][on]-touch[touch][location][kitchen]" event="[TOUCH][LOCATION][KITCHEN]" />
+    <transition target="sspeech[speech][light][on]-touch[touch][location][dinnerroom]" event="[TOUCH][LOCATION][DINNERROOM]" />
+    <transition target="sspeech[speech][light][on]-touch[touch][location][bedroom]" event="[TOUCH][LOCATION][BEDROOM]" />
+    <transition target="sspeech[speech][light][on]-touch[touch][location][wc]" event="[TOUCH][LOCATION][WC]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][on]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][on]-final">
+    <onentry>
+      <log label="[speech[speech][light][on]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][ON]')}" />
+      <send event="LIGHT_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on]-touch[touch][location][livingroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][on]-touch[touch][location][livingroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][LIVINGROOM][ON]')}" />
+      <send event="LIGHT_LIVINGROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on]-touch[touch][location][room]">
+    <onentry>
+      <log label="[sspeech[speech][light][on]-touch[touch][location][room]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][ROOM][ON]')}" />
+      <send event="LIGHT_ROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on]-touch[touch][location][kitchen]">
+    <onentry>
+      <log label="[sspeech[speech][light][on]-touch[touch][location][kitchen]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][KITCHEN][ON]')}" />
+      <send event="LIGHT_KITCHEN_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on]-touch[touch][location][dinnerroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][on]-touch[touch][location][dinnerroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][DINNERROOM][ON]')}" />
+      <send event="LIGHT_DINNERROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on]-touch[touch][location][bedroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][on]-touch[touch][location][bedroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][BEDROOM][ON]')}" />
+      <send event="LIGHT_BEDROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on]-touch[touch][location][wc]">
+    <onentry>
+      <log label="[sspeech[speech][light][on]-touch[touch][location][wc]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][WC][ON]')}" />
+      <send event="LIGHT_WC_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on][location][dinnerroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][on][location][dinnerroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][on][location][dinnerroom]" event="timeout-sspeech[speech][light][on][location][dinnerroom]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][on][location][dinnerroom]-final" event="timeout-sspeech[speech][light][on][location][dinnerroom]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][on][location][dinnerroom]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][on][location][dinnerroom]-final">
+    <onentry>
+      <log label="[speech[speech][light][on][location][dinnerroom]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][DINNERROOM][ON]')}" />
+      <send event="LIGHT_DINNERROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on][location][bedroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][on][location][bedroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][on][location][bedroom]" event="timeout-sspeech[speech][light][on][location][bedroom]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][on][location][bedroom]-final" event="timeout-sspeech[speech][light][on][location][bedroom]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][on][location][bedroom]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][on][location][bedroom]-final">
+    <onentry>
+      <log label="[speech[speech][light][on][location][bedroom]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][BEDROOM][ON]')}" />
+      <send event="LIGHT_BEDROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][whereq]">
+    <onentry>
+      <log label="[sspeech[speech][light][whereq]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][whereq]" event="timeout-sspeech[speech][light][whereq]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][whereq]-final" event="timeout-sspeech[speech][light][whereq]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][whereq]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][whereq]-final">
+    <onentry>
+      <log label="[speech[speech][light][whereq]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][WHEREQ]')}" />
+      <send event="WHERE_LIGHTS" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on][location][room]">
+    <onentry>
+      <log label="[sspeech[speech][light][on][location][room]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][on][location][room]" event="timeout-sspeech[speech][light][on][location][room]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][on][location][room]-final" event="timeout-sspeech[speech][light][on][location][room]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][on][location][room]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][on][location][room]-final">
+    <onentry>
+      <log label="[speech[speech][light][on][location][room]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][ROOM][ON]')}" />
+      <send event="LIGHT_ROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off]">
+    <onentry>
+      <log label="[sspeech[speech][light][off]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][off]" event="timeout-sspeech[speech][light][off]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][off]-final" event="timeout-sspeech[speech][light][off]" />
+    <transition target="sspeech[speech][light][off]-touch[touch][location][livingroom]" event="[TOUCH][LOCATION][LIVINGROOM]" />
+    <transition target="sspeech[speech][light][off]-touch[touch][location][room]" event="[TOUCH][LOCATION][ROOM]" />
+    <transition target="sspeech[speech][light][off]-touch[touch][location][kitchen]" event="[TOUCH][LOCATION][KITCHEN]" />
+    <transition target="sspeech[speech][light][off]-touch[touch][location][dinnerroom]" event="[TOUCH][LOCATION][DINNERROOM]" />
+    <transition target="sspeech[speech][light][off]-touch[touch][location][bedroom]" event="[TOUCH][LOCATION][BEDROOM]" />
+    <transition target="sspeech[speech][light][off]-touch[touch][location][wc]" event="[TOUCH][LOCATION][WC]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][off]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][off]-final">
+    <onentry>
+      <log label="[speech[speech][light][off]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][OFF]')}" />
+      <send event="LIGHT_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off]-touch[touch][location][livingroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][off]-touch[touch][location][livingroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][LIVINGROOM][OFF]')}" />
+      <send event="LIGHT_LIVINGROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off]-touch[touch][location][room]">
+    <onentry>
+      <log label="[sspeech[speech][light][off]-touch[touch][location][room]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][ROOM][OFF]')}" />
+      <send event="LIGHT_ROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off]-touch[touch][location][kitchen]">
+    <onentry>
+      <log label="[sspeech[speech][light][off]-touch[touch][location][kitchen]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][KITCHEN][OFF]')}" />
+      <send event="LIGHT_KITCHEN_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off]-touch[touch][location][dinnerroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][off]-touch[touch][location][dinnerroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][DINNERROOM][OFF]')}" />
+      <send event="LIGHT_DINNERROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off]-touch[touch][location][bedroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][off]-touch[touch][location][bedroom]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][BEDROOM][OFF]')}" />
+      <send event="LIGHT_BEDROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off]-touch[touch][location][wc]">
+    <onentry>
+      <log label="[sspeech[speech][light][off]-touch[touch][location][wc]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][WC][OFF]')}" />
+      <send event="LIGHT_WC_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off][location][kitchen]">
+    <onentry>
+      <log label="[sspeech[speech][light][off][location][kitchen]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][off][location][kitchen]" event="timeout-sspeech[speech][light][off][location][kitchen]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][off][location][kitchen]-final" event="timeout-sspeech[speech][light][off][location][kitchen]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][off][location][kitchen]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][off][location][kitchen]-final">
+    <onentry>
+      <log label="[speech[speech][light][off][location][kitchen]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][KITCHEN][OFF]')}" />
+      <send event="LIGHT_KITCHEN_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off][location][livingroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][off][location][livingroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][off][location][livingroom]" event="timeout-sspeech[speech][light][off][location][livingroom]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][off][location][livingroom]-final" event="timeout-sspeech[speech][light][off][location][livingroom]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][off][location][livingroom]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][off][location][livingroom]-final">
+    <onentry>
+      <log label="[speech[speech][light][off][location][livingroom]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][LIVINGROOM][OFF]')}" />
+      <send event="LIGHT_LIVINGROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][off][location][room]">
+    <onentry>
+      <log label="[sspeech[speech][light][off][location][room]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][off][location][room]" event="timeout-sspeech[speech][light][off][location][room]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][off][location][room]-final" event="timeout-sspeech[speech][light][off][location][room]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][off][location][room]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][off][location][room]-final">
+    <onentry>
+      <log label="[speech[speech][light][off][location][room]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][ROOM][OFF]')}" />
+      <send event="LIGHT_ROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][room]">
+    <onentry>
+      <log label="[stouch[touch][location][room]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-stouch[touch][location][room]" event="timeout-stouch[touch][location][room]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="touch[touch][location][room]-final" event="timeout-stouch[touch][location][room]" />
+    <transition target="stouch[touch][location][room]-speech[speech][light][on]" event="[SPEECH][LIGHT][ON]" />
+    <transition target="stouch[touch][location][room]-speech[speech][light][off]" event="[SPEECH][LIGHT][OFF]" />
+    <transition target="stouch[touch][location][room]-speech[speech][temperature][up]" event="[SPEECH][TEMPERATURE][UP]" />
+    <transition target="stouch[touch][location][room]-speech[speech][temperature][down]" event="[SPEECH][TEMPERATURE][DOWN]" />
+    <onexit>
+      <cancel sendid="state1-timer-stouch[touch][location][room]" />
+    </onexit>
+  </state>
+  <state id="touch[touch][location][room]-final">
+    <onentry>
+      <log label="[touch[touch][location][room]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LOCATION][ROOM]')}" />
+      <send event="LOCATION_ROOM" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][room]-speech[speech][light][on]">
+    <onentry>
+      <log label="[stouch[touch][location][room]-speech[speech][light][on]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][ROOM][ON]')}" />
+      <send event="LIGHT_ROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][room]-speech[speech][light][off]">
+    <onentry>
+      <log label="[stouch[touch][location][room]-speech[speech][light][off]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][LIGHT][ROOM][OFF]')}" />
+      <send event="LIGHT_ROOM_OFF" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][room]-speech[speech][temperature][up]">
+    <onentry>
+      <log label="[stouch[touch][location][room]-speech[speech][temperature][up]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][ROOM][UP]')}" />
+      <send event="TEMP_ROOM_UP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="stouch[touch][location][room]-speech[speech][temperature][down]">
+    <onentry>
+      <log label="[stouch[touch][location][room]-speech[speech][temperature][down]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][TEMPERATURE][ROOM][DOWN]')}" />
+      <send event="TEMP_ROOM_DOWN" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][light][on][location][livingroom]">
+    <onentry>
+      <log label="[sspeech[speech][light][on][location][livingroom]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][light][on][location][livingroom]" event="timeout-sspeech[speech][light][on][location][livingroom]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[speech][light][on][location][livingroom]-final" event="timeout-sspeech[speech][light][on][location][livingroom]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][light][on][location][livingroom]" />
+    </onexit>
+  </state>
+  <state id="speech[speech][light][on][location][livingroom]-final">
+    <onentry>
+      <log label="[speech[speech][light][on][location][livingroom]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[FUSION][LIGHT][LIVINGROOM][ON]')}" />
+      <send event="LIGHT_LIVINGROOM_ON" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+</scxml>

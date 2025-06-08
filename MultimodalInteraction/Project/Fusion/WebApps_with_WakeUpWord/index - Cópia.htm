@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CASA VIVA + Assistant</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        --indicator-color: black;
+        background: #fff; /*radial-gradient(#fff 75%, var(--indicator-color));*/
+        min-height: 100vh;
+        color: burlywood;
+        font-family: Poppins;
+        margin: 0;
+        padding: 0;
+      }
+      .mic{
+        width: 150px;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 2%;
+        width: 95%;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+      }
+      .recognized{
+        font-size:x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="background-color: #4F5D73; margin: 0;">CASA VIVA + Assistant</h1>
+   <!-- <p>Click the button below and start speaking.</p>
+    <button id="start-btn">Start</button>
+    -->
+
+
+
+
+
+    <div class="container" style="border: solid 2px #4F5D73;margin: 2%;"> 
+    
+
+    <svg class="mic" id="mic" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+    <style type="text/css">
+     .st01{fill:#4F5D73;}
+     .st1{opacity:0.2;}
+     .st2{fill:#231F20;}
+     .st3{fill:#4F5D73;}
+     .st4{fill:#FFFFFF;}
+    </style>
+   <defs>
+     <filter id="f1" x="0" y="0">
+       <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+     </filter>
+   </defs>
+       <circle class="st0" cx="50" cy="50" r="32"/>
+   <g id="Layer_1"  transform="translate(18,18)" >
+     <g class="st1"  >
+           <path class="st2" d="M32,41.5c3.3,0,6-2.7,6-6v-18c0-3.3-2.7-6-6-6s-6,2.7-6,6v18C26,38.8,28.7,41.5,32,41.5z"/>
+     </g>
+     <g class="st1">
+         <path class="st2" d="M32,48.2c-7.2,0-13-5.8-13-13v-3.8c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5v3.8c0,5.5,4.5,10,10,10
+           s10-4.5,10-10v-3.8c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5v3.8C45,42.4,39.2,48.2,32,48.2z"/>
+     </g>
+     <g class="st1">
+         <path class="st2" d="M32,55c-0.8,0-1.5-0.7-1.5-1.5v-6c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5v6C33.5,54.3,32.8,55,32,55z"/>
+     </g>
+     <g class="st1">
+         <path class="st2" d="M37,56H27c-0.8,0-1.5-0.7-1.5-1.5S26.2,53,27,53h10c0.8,0,1.5,0.7,1.5,1.5S37.8,56,37,56z"/>
+     </g>
+       <path class="st3" d="M32,39.5c3.3,0,6-2.7,6-6v-18c0-3.3-2.7-6-6-6s-6,2.7-6,6v18C26,36.8,28.7,39.5,32,39.5z"/>
+       <path class="st4" d="M32,46.2c-7.2,0-13-5.8-13-13v-3.8c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5v3.8c0,5.5,4.5,10,10,10
+         s10-4.5,10-10v-3.8c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5v3.8C45,40.4,39.2,46.2,32,46.2z"/>
+       <path class="st4" d="M32,53c-0.8,0-1.5-0.7-1.5-1.5v-6c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5v6C33.5,52.3,32.8,53,32,53z"/>
+       <path class="st4" d="M37,54H27c-0.8,0-1.5-0.7-1.5-1.5S26.2,51,27,51h10c0.8,0,1.5,0.7,1.5,1.5S37.8,54,37,54z"/>
+   </g>
+   </svg>
+
+      <div class="recognized" style="display: inline; vertical-align: center; top: auto;bottom: auto; width: 600px;" id="transcript"></div>
+
+    </div>
+
+
+    <div id="energy"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@latest/dist/svg.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ricky0123/vad-web@0.0.7/dist/bundle.min.js"></script>
+    <script src="js/mmi.js"></script>
+    <script src="js/globals.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/webtoolkit.utf8.js"></script>
+
+<script type="module">
+  import { interpolateGreens } from "https://cdn.skypack.dev/d3-scale-chromatic@3"
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
+  recognition.continuous = false;
+  recognition.interimResults = true;
+  recognition.lang = 'pt-PT';
+
+
+  var circle = SVG.find('.st0');//.fill('#ccc');    
+  const startBtn = document.getElementById('start-btn');
+  const transcriptDiv = document.getElementById('transcript');
+  const energyDiv = document.getElementById('energy');
+
+  var firstSent = "Diga 'Casa Viva' para comecar a falar.";
+  transcriptDiv.textContent = firstSent;
+  var resetfunc ;
+
+
+  recognition.onerror = function(event) {
+    console.error("REC ERROR"+event.error);
+    transcriptDiv.innerHTML = firstSent;
+  };
+
+  recognition.onresult = function(event) {
+    speechActive=false;
+    var interim_transcript = '';
+    var final_transcript = '';
+
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        //if(event.results[i][0].confidence>0.6)
+        energyDiv.textContent += event.results[i][0].confidence;
+        {
+          final_transcript ="";
+          console.log("++"+event.results[i][0].transcript+"++");
+          var sentence = event.results[i][0].transcript.trim().toLowerCase();
+          if(sentence.startsWith("casa viva") || sentence.startsWith("viva") || sentence.startsWith("aviva") || sentence.startsWith("sa viva") || sentence.startsWith("da viva") ||sentence.startsWith("ora viva")){
+            var indSent = sentence.indexOf("viva");
+            final_transcript= sentence.slice(indSent+5);
+          }
+        }
+
+        if(final_transcript.length>2){
+          final_transcript = final_transcript.charAt(0).toUpperCase()+ final_transcript.slice(1);
+          transcriptDiv.innerHTML = "<span style='color:#00b44e'><b>"+final_transcript+"</b></span>";
+
+          sendMMI(final_transcript);
+        }else{
+          transcriptDiv.innerHTML = "<span style='color:#ff9494'><b>Desculpe nao consegui ententer.</b></span>";
+        }
+
+        resetfunc = setTimeout(function(){
+          transcriptDiv.innerHTML = firstSent;
+        }, 3000);
+
+        speechActive = false;
+      }else{
+        //if(event.results[i][0].confidence>0.6)
+        {
+          console.log(event.results[i][0].transcript + " -- " + i);
+          var sentence = event.results[i][0].transcript.trim().toLowerCase();
+          if(sentence.startsWith("casa viva") || sentence.startsWith("viva") || sentence.startsWith("aviva") || sentence.startsWith("sa viva") || sentence.startsWith("da viva") ||sentence.startsWith("ora viva") ){
+            var indSent = sentence.indexOf("viva");
+            final_transcript= sentence.slice(indSent+5);
+          }
+        }
+        transcriptDiv.textContent = interim_transcript;
+      }
+    }
+  };
+
+
+  var vadActive = false;
+  var speechActive = false;
+
+  async function main() {
+    const myvad = await vad.MicVAD.new({
+
+      onSpeechEnd: (audio) => {
+        // do something with `audio` (Float32Array of audio samples at sample rate 16000)...
+        //transcriptDiv.textContent += "-";
+        vadActive = false;
+        setTimeout(function(){
+          if(speechActive) recognition.stop();
+          speechActive=false;
+        }, 3000);
+      },
+      onSpeechStart: ()=>{
+        //transcriptDiv.textContent += " ->";
+        if(!speechActive){
+          speechActive=true;
+          recognition.start();
+          transcriptDiv.textContent = "...";
+        }
+        clearTimeout(resetfunc);
+        vadActive=true;
+      },
+      onFrameProcessed: (probs) => {
+        if(vadActive || speechActive){
+          const indicatorColor = interpolateGreens(probs.isSpeech / 1.5);
+          //circle.fill(indicatorColor);
+          circle.animate(20, 0, 'now').attr({ fill: indicatorColor });
+        } 
+        //    energyDiv.textContent = probs.isSpeech + "--" + probs.notSpeech;  
+        //document.body.style.setProperty("--indicator-color", indicatorColor)
+      },
+    })
+    myvad.start()
+  }
+  main()
+
+  if ('speechSynthesis' in window) {
+	  console.log('Your browser <strong>supports</strong> speech synthesis.');
+  }
+
+  var ttsSpeaker;
+  window.speechSynthesis.onvoiceschanged = function(e) {
+    var voices = speechSynthesis.getVoices();
+    ttsSpeaker = voices[0];
+    for (let i = 0; i < voices.length; i++) {
+      if(voices[i].lang=="pt-PT"){
+        console.log(voices[i]);
+        if(voices[i].name.includes("Duarte")) ttsSpeaker=voices[i];
+      }
+      
+
+    }
+    console.log(ttsSpeaker);
+  };
+  
+  function speak(text){
+
+    var msg = new SpeechSynthesisUtterance();
+    msg.text = text;
+  
+    // Set the attributes.
+    msg.volume = parseFloat(1);
+    msg.rate = parseFloat(1.1);
+    msg.pitch = parseFloat(1);
+
+    msg.voice = ttsSpeaker;
+
+    window.speechSynthesis.speak(msg);
+  }
+  /////////////////////////////////////////
+
+
+  var mmiCli_1 = null;
+  mmiCli_1 = new MMIClient(null, mmi_fusion + "SPEECHIN");
+
+
+  function sendMMI(final_transcript){
+    var message = btoa(unescape(encodeURIComponent(final_transcript)));
+    var result = { "recognized" : ["SPEECH", "SPEECHIN", "APP"], "text": message };
+    mmiCli_1.sendToIM(new LifeCycleEvent("SPEECHIN", "IM", "text-1", "ctx-1").
+            doExtensionNotification(new EMMA("text-", "text", "command", 1, 0).
+            setValue(JSON.stringify(result))));
+  }
+  
+
+  var mmiCli_Out_add = "wss://"+host+":8005/IM/USER1/";
+  var mmiCli_Out = null;
+  mmiCli_Out = new MMIClientSocket(mmiCli_Out_add + "SPEECHOUT");
+  mmiCli_Out.onMessage.on(im1MessageHandler);
+  mmiCli_Out.onOpen.on(socketOpenHandler);
+	mmiCli_Out.openSocket();
+
+
+  function socketOpenHandler(event) {
+    console.log("---------------openSocketHandler---------------")
+
+    if(mmiCli_Out.socket.readyState !== WebSocket.OPEN)
+    {
+        return;
+    }
+  }
+
+  function im1MessageHandler(data) {
+
+    console.log("--------------im1MessageHandler---------------");
+
+    if(data != null && data!="RENEW" && data!="OK") {
+
+      console.log(data);
+
+      var content = $(data).find("emma\\:interpretation").first().text().trim();
+
+      if (typeof content == 'string') {
+        try {
+          // Try to parse XML
+          var xml = $.parseXML(content.replace(/\\"/g, "\"").slice(1,-1));
+
+          // Extract sentence
+          let sentence = $(xml).find("p").text();
+          let text = Utf8.decode(atob(sentence.slice(2,-1)));
+
+          console.log(text);
+
+        }
+        catch (e) { console.log(e); }
+
+      }
+    }
+  }
+
+
+</script> 
+
+
+  </body>
+</html>

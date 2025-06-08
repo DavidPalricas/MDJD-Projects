@@ -3,6 +3,8 @@
 **/.venv/
 **/.rasa/cache
 *.log
+*.class
+
 
 # IntelligentSystemsII
 IntelligentSystemsII/StudyOfToolsII/saved_policy
@@ -12,3 +14,7 @@ IntelligentSystemsII/MP1-ConversionalAgent/story_graph.dot
 IntelligentSystemsII/MP2-RLAgent/policy
 IntelligentSystemsII/MP2-RLAgent/logs
 IntelligentSystemsII/MP2-RLAgent/highscores.json
+
+#MultiModalInteraction
+MultiModalInteraction/Project/Voice/rasa/models
+MultiModalInteraction/Project/Fusion/rasaDemo/models

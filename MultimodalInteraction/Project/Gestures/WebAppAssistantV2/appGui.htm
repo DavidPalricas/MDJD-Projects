@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>YOUTUBE + APPGUI</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        --indicator-color: black;
+        background: #fff; /*radial-gradient(#fff 75%, var(--indicator-color));*/
+        min-height: 100vh;
+        color: #FFFFFF;
+        font-family: Poppins;
+        margin: 0;
+        padding: 0;
+      }
+      .mic{
+        width: 150px;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+      }
+
+      .responseText{
+        border: solid 2px #8ea7cf;
+        margin: 2%;
+        color: #41683a;
+      }
+
+      .bottomNav{
+        
+        position: absolute;
+        bottom: 2%;
+        width: 95%;
+      }
+      .recognized{
+        font-size:x-large;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 style="background-color: #FF0000; margin: 0;">YOUTUBE + APP GUI</h1>
+
+
+
+
+    
+    <div style="width: 500px;">
+
+    
+    <svg class="a" id="a" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 320 100" style="enable-background:new 0 0 320 100;" xml:space="preserve">
+  
+    </svg>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@latest/dist/svg.min.js"></script>
+    <script src="js/mmi.js"></script>
+    <script src="js/globals.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/webtoolkit.utf8.js"></script>
+
+
+ 
+<script type="module">
+
+
+  var mmiCli_Out_add = "wss://"+host+":8005/IM/USER1/";
+  var mmiCli_Out = null;
+  mmiCli_Out = new MMIClientSocket(mmiCli_Out_add + "APP");
+  mmiCli_Out.onMessage.on(im1MessageHandler);
+  mmiCli_Out.onOpen.on(socketOpenHandler);
+	mmiCli_Out.openSocket();
+ 
+
+  const OUTPUT = "http://127.0.0.1:5000/"
+  
+
+  function GreetingTheUser(){
+
+    try {
+       const url = OUTPUT + "greet";
+
+       const response = fetch(url, {
+         method: 'GET',
+         headers: {
+           'Content-Type': 'application/json',
+         },
+       })
+
+       const data = response.json();
+
+       if (!response.ok) {
+         const error = (data && data.message) || response.statusText;
+
+         throw new Error("HTTP Error: " + response.status + " - " + error);
+       }
+
+       return data;
+
+
+    } catch (error) {
+      console.error("Error fetching data (greet intent): ", error);
+      
+    }
+    
+  }
+  function socketOpenHandler(event) {
+    console.log("---------------openSocketHandler---------------")
+
+    if(mmiCli_Out.socket.readyState !== WebSocket.OPEN)
+    {
+        return;
+    }
+  }
+
+
+
+  function im1MessageHandler(data) {
+
+    console.log("--------------im1MessageHandler---------------");
+
+    if(data != null && data!="RENEW" && data!="OK") {
+      console.log(data);
+      var content = $(data).find("emma\\:interpretation").first().text().trim();
+      if (typeof content == 'string') {
+        try {
+          // Try to parse XML
+          console.log(content);
+
+          //$("#response").html(content);
+          //$("#response").addClass("container");
+          //$("#response").addClass("responseText");
+
+         switch(c.nlu.intent ){
+
+            case "greet":
+
+              let message = GreetingTheUser();
+
+              sendToVoice(message["message"]);
+            
+            break;
+
+            default:
+              sendToVoice("Não entendi, poderia repetir?");
+            break;
+         }
+          
+          /*setTimeout(function(){
+            $("#response").html("");
+            $("#response").removeClass("container");
+            $("#response").removeClass("responseText");
+          }, 3000);
+          */
+        }
+        catch (e) { console.log(e); }
+
+      }
+    }
+  }
+
+
+/////
+
+  var mmiCli_1 = null;
+  mmiCli_1 = new MMIClient(null, "https://"+host+":8000/IM/USER1/APPSPEECH");
+
+
+
+
+
+
+  function sendToVoice(texto){
+    //let speak = "&lt;speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.w3.org/2001/10/synthesis http://www.w3.org/TR/speech-synthesis/synthesis.xsd\" xml:lang=\"pt-PT\"&gt;&lt;p&gt;" + "quadrado" + "&lt;/p&gt;&lt;/speak&gt";
+  let speak = "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.w3.org/2001/10/synthesis http://www.w3.org/TR/speech-synthesis/synthesis.xsd\" xml:lang=\"pt-PT\"><p>"+texto+"</p></speak>";
+  var result = speak;
+      mmiCli_1.sendToIM(new LifeCycleEvent("APPSPEECH", "IM", "text-1", "ctx-1").
+          doStartRequest(new EMMA("text-", "text", "command", 1, 0).
+            setValue(JSON.stringify(result))));
+  }
+  
+
+
+
+  /////////////////////////////////////////
+
+</script> 
+  </body>
+</html>

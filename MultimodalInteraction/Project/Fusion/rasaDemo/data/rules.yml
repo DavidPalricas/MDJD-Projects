@@ -1,0 +1,138 @@
+version: "3.1"
+
+rules:
+
+- rule:
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: choose_item
+  steps:
+  - intent: choose_item
+  - action: utter_choose_item
+
+- rule: search_video
+  steps:
+  - intent: search_video
+  - action: utter_search_video
+
+- rule: pause_video
+  steps:
+  - intent: pause_video
+  - action: utter_pause_video
+
+- rule: play_video
+  steps:
+  - intent: play_video
+  - action: utter_play_video
+
+- rule: activate_video_subtitles
+  steps:
+  - intent: activate_video_subtitles
+  - action: utter_activate_video_subtitles
+
+- rule: deactivate_video_subtitles
+  steps:
+  - intent: deactivate_video_subtitles
+  - action: utter_deactivate_video_subtitles
+
+- rule: mute_video
+  steps:
+  - intent: mute_video
+  - action: utter_mute_video
+
+- rule: unmute_video
+  steps:
+  - intent: unmute_video
+  - action: utter_unmute_video
+
+- rule: increase_speed
+  steps:
+  - intent: increase_speed
+  - action: utter_increase_speed
+
+- rule: decrease_speed
+  steps:
+  - intent: decrease_speed
+  - action: utter_decrease_speed
+
+- rule: alternate_speed
+  steps:
+  - intent: alternate_speed
+  - action: utter_alternate_speed
+
+- rule: write_comment
+  steps:
+  - intent: write_comment
+  - action: utter_write_comment
+
+- rule: seek_forward_video
+  steps:
+  - intent: seek_forward_video
+  - action: utter_seek_forward_video
+
+- rule: seek_backward_video
+  steps:
+  - intent: seek_backward_video
+  - action: utter_seek_backward_video
+
+- rule: share_video
+  steps:
+  - intent: share_video
+  - action: utter_share_video
+
+- rule: save_to_playlist
+  steps:
+  - intent: save_to_playlist
+  - action: utter_save_to_playlist
+
+- rule: subscribe_channel
+  steps:
+  - intent: subscribe_channel
+  - action: utter_subscribe_channel
+
+- rule: unsubscribe_channel
+  steps:
+  - intent: unsubscribe_channel
+  - action: utter_unsubscribe_channel
+
+- rule: volumeu
+  steps:
+  - intent: volumeu
+  - action: utter_volumeu
+
+- rule: volumed
+  steps:
+  - intent: volumed
+  - action: utter_volumed
+
+- rule: fulls
+  steps:
+  - intent: fulls
+  - action: utter_fulls
+
+- rule: normals
+  steps:
+  - intent: normals
+  - action: utter_normals
+
+- rule: slideup
+  steps:
+  - intent: slideup
+  - action: utter_slideup
+
+- rule: slided
+  steps:
+  - intent: slided
+  - action: utter_slided
+
+- rule: help_options
+  steps:
+  - intent: choose_help_options
+  - action: utter_choose_help_options

@@ -1,0 +1,17 @@
+version: "3.1"
+nlu:
+- lookup: help_options
+  examples: |
+    - voz e gestos
+    - voz e fusão
+    - gestos e fusão
+    - fusão e voz
+    - fusão e gestos
+    - voz
+    - gestos
+    - fusão
+    - todos
+    - todas
+    - nenhum
+    - nenhuma
+    

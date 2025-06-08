@@ -1,0 +1,216 @@
+version: '3.1'
+intents:
+- shutdown_assistant
+- affirm
+- deny
+- search_video
+- pause_video
+- activate_video_subtitles
+- deactivate_video_subtitles
+- play_video
+- increase_speed
+- decrease_speed
+- alternate_speed
+- mute_video
+- unmute_video
+- write_comment
+- seek_forward_video
+- seek_backward_video
+- share_video
+- save_to_playlist 
+- subscribe_channel
+- unsubscribe_channel
+- activate_notifications
+- mantain_notifications
+- desactivate_notifications
+- choose_item
+- volumeu
+- volumed
+- fulls
+- normals
+- slideup
+- slided
+- help
+- choose_help_options
+
+entities:
+  - video
+  - comment
+  - time
+  - user
+  - playlist
+  - speed
+  - choosen_item
+  - volume_value
+  - help_options
+  - scroll_value
+
+slots:
+  video:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: video
+
+  comment:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: comment
+
+  time:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: time
+
+  user:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: user
+  
+  speed:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: speed
+  
+  playlist:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: playlist
+
+  choosen_item:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: choosen_item
+
+  volume_value:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: volume_value
+
+  help_options:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: help_options
+
+  scroll_value:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: scroll_value
+
+responses:
+  utter_greet:
+  - text: Olá, como posso ajudar? Pode perguntar caso não saiba as funcionalidades disponíveis.
+
+  utter_cancel:
+  - text: Okay! Está cancelado!
+
+  utter_goodbye:
+  - text: Adeus!
+  - text: Lembre-se, estou sempre à sua disposição!
+
+  utter_default:
+  - text: Desculpe, não percebi. Pode repetir?
+
+  utter_choose_item:
+  - text: Escolhendo o {choosen_item} item...
+
+  utter_search_video:
+  - text: Procurando o video {video}...
+  - text: Pesquisando pelo video {video}...
+
+  utter_pause_video:
+  - text: Pausando o video
+
+  utter_play_video:
+  - text: Continuando o video
+  - text: A tirar da pausa
+
+  utter_activate_video_subtitles:
+  - text: Ativando as legendas
+  - text: Ativando as legendas do video
+
+  utter_deactivate_video_subtitles:
+  - text: Desativando as legendas
+  - text: Desativando as legendas do video
+
+  utter_mute_video:
+  - text: Silenciando o video
+  - text: Silenciando o video
+
+  utter_unmute_video:
+  - text: Retirando o silêncio do video
+  - text: Retirando o silêncio do video
+
+  utter_increase_speed:
+  - text: Aumentando a velocidade do video para {speed}
+
+  utter_decrease_speed:
+  - text: Diminuindo a velocidade do video para {speed}
+
+  utter_alternate_speed:
+  - text: Alterando a velocidade do video para {speed}
+
+  utter_write_comment:
+  - text: Escrevendo o comentário {comment}...
+
+  utter_seek_forward_video:
+  - text: Avançando {time}
+
+  utter_seek_backward_video:
+  - text: Retrocedendo {time}
+
+  utter_share_video:
+  - text: Compartilhando o video com o {user}...
+
+  utter_save_to_playlist:
+  - text: Guardando o video na playlist {playlist}...
+
+  utter_subscribe_channel:
+  - text: Inscrevendo-se no canal
+
+  utter_unsubscribe_channel:
+  - text: Cancelado a inscrição do canal 
+
+  utter_volumeu:
+  - text: Aumentando o volume para {volume_value}
+
+  utter_volumed:
+  - text: Diminuindo o volume para {volume_value}
+
+  utter_fulls:
+  - text: Tela cheia
+
+  utter_normals:
+  - text: Tela normal
+
+  utter_slideup:
+  - text: Scroll para cima {scroll_value}
+
+  utter_slided:
+  - text: Scroll para baixo {scroll_value}
+
+  utter_choose_help_options:
+  - text: As opções de ajuda disponíveis são {help_options}
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

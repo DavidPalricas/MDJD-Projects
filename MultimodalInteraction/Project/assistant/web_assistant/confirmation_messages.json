@@ -1,0 +1,13 @@
+{
+    "search_video": "Você deseja pesquisar o vídeo {entity}?",
+    "increase_speed": "Você deseja aumentar a velocidade do vídeo para {entity}?",
+    "decrease_speed": "Você deseja diminuir a velocidade do vídeo para {entity}?",
+    "alternate_speed": "Você deseja alterar a velocidade do vídeo para {entity}?",
+    "write_comment": "Você deseja escrever o comentário {entity}?",
+    "save_to_playlist": "Você deseja guardar o vídeo na playlist {entity}?",
+    "seek_forward_video": "Você deseja avançar o vídeo para {entity}?",
+    "seek_backward_video": "Você deseja retroceder o vídeo para {entity}?",
+    "share_video": "Você deseja compartilhar o vídeo com {entity}?",
+    "choose_item": "Você deseja escolher o {entity} item?",
+    "shutdown_assistant": "Você deseja desligar o assistente?"
+}

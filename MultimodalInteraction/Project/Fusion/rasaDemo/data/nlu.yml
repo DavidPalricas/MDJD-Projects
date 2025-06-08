@@ -1,0 +1,479 @@
+version: "3.1"
+nlu:
+- regex: time 
+  examples: |
+    - [0-9]+ (segundos|segundo|minutos|minuto|hora|horas)
+
+- intent: shutdown_assistant
+  examples: |
+    - Xau, Assistente
+    - Xau
+    - Adeus, Assistente
+    - Adeus
+    - Até logo, Assistente
+    - Até logo
+    - Até amanhã, Assistente
+    - Até amanhã
+    - Até uma próxima, Assistente
+    - Até uma próxima
+    - Até breve, Assistente
+    - Até breve
+    - Até um dia, Assistente
+    - Até um dia
+    - Fechar
+    - Desligar
+    - Desliga-te
+    - Desliga-te, por favor
+    - Fecha-te
+    - Fecha-te, por favor
+    
+- intent: affirm
+  examples: |
+    - Sim
+    - Claro
+    - Parece-me bem
+    - Correto
+    - Okay
+    - Ok
+    - sim
+
+- intent: deny
+  examples: |
+    - Não
+    - Nope
+    - Nunca
+    - Acho que não
+    - Não gosto assim
+    - Nem por isso
+
+- intent: choose_item
+  examples: |
+    - Escolha o [primeiro](choosen_item)
+    - [segundo](choosen_item)
+    - [terceiro](choosen_item), por favor
+    - Escolhe o [1º](choosen_item), por favor
+    - Quero o [2º](choosen_item)
+    - Por favor escolha o [3º](choosen_item)
+    - Pode escolher o [2º](choosen_item)
+    - Quero o [terceiro](choosen_item), por favor
+
+- intent: search_video
+  examples: |
+    - Procura o vídeo [Baby Shark Dance](video)
+    - Procura pelo vídeo [How Animals Eat Their Food](video)
+    - Pesquise o vídeo [Como irritar um jogador de lol](video)
+    - Pesquise pelo vídeo [O chão é lava](video)
+    - Pesquisa ai por [tutoriais de python](video)
+    - Procure ai por [tutorial de c++](video)
+    - Procure pela música [Despacito](video)
+    - Pesquise por [tutorial de html](video)
+    - Encontre [vídeos de culinária](video)
+    - Encontra [vídeos de desporto](video)
+
+- intent: pause_video
+  examples: |
+    - Por favor pause o vídeo
+    - Por favor pare o vídeo
+    - Pausa o vídeo
+    - Para o vídeo
+    - Interrompa o vídeo
+    - Parou
+    - Pause 
+    - Pause aí o vídeo
+    - Pare aí o vídeo
+    - Interrompa aí o vídeo
+
+- intent: play_video
+  examples: |
+    - Por favor continua o video
+    - Continua com o video
+    - Continue
+    - Retome
+    - Prossiga
+    - Tire da pausa
+    - Tira o video da pausa
+    - Retoma o vídeo
+    - Procede
+    - Proceda com o vídeo
+
+- intent: activate_video_subtitles
+  examples: |
+    - Ativa as legendas
+    - Ativa as legendas do vídeo
+    - Ativa as legendas por favor
+    - Ativa as legendas do vídeo por favor
+    - Ativa as legendas do vídeo, por favor
+    - Ativa as legendas, por favor
+    - Liga as legendas
+    - Liga as legendas do vídeo
+    - Liga as legendas por favor
+    - Liga as legendas do vídeo por favor
+    - Liga as legendas do vídeo, por favor
+    - Liga as legendas, por favor
+    - Quero as legendas
+    - Preciso das legendas por favor
+
+- intent: deactivate_video_subtitles
+  examples: |
+    - Desativa as legendas
+    - Desativa as legendas do vídeo
+    - Desativa as legendas por favor
+    - Desativa as legendas do vídeo por favor
+    - Desativa as legendas do vídeo, por favor
+    - Desativa as legendas, por favor
+    - Desliga as legendas
+    - Desliga as legendas do vídeo
+    - Desliga as legendas por favor
+    - Desliga as legendas do vídeo por favor
+    - Desliga as legendas do vídeo, por favor
+    - Desliga as legendas, por favor
+
+- intent: mute_video
+  examples: |
+    - Silencia o vídeo por favor
+    - Silencia o vídeo
+    - Silenciar
+    - Mute
+    - Mute o som
+    - Mute o som por favor
+    - Desliga o som
+    - Desliga o som por favor
+    - Tira o som
+    - Tira o som por favor
+    - Tira o som do vídeo
+
+- intent: unmute_video
+  examples: |
+    - Ativa o som
+    - Ativa o som por favor
+    - Tira do silêncio
+    - Tira do silêncio por favor
+    - Ligar o som
+    - Liga o som por favor
+    - Unmute
+    - Unmute o vídeo
+    - Unmute o vídeo por favor
+    - Ativa o som do vídeo
+    - Ativa o som do vídeo por favor
+    - Tira o mute do video
+    - Tira o mute do video por favor
+
+- intent: increase_speed
+  examples: |
+    - Aumenta a velocidade do vídeo
+    - Aumente a velocidade do vídeo em [0,5](speed)
+    - Aumnete em [0,75] (speed) a velocidade do vídeo
+    - Acelera a velocidade do vídeo
+    - Acelera a velocidade do vídeo em [1,75](speed)
+    - Eleva a velocidade do vídeo
+    - Eleva a velocidade do vídeo em [1,25](speed)
+    - Amplifica a velocidade do vídeo
+    - Amplifica a velocidade do vídeo em [1,5](speed)
+    - Por favor aumente a velocidade em [2](speed)
+    - Por favor acelere a velocidade em [1,75](speed)
+    - Por favor eleve a velocidade em [0,25](speed)
+    - Por favor amplifique a velocidade em [0,5](speed)
+
+- intent: decrease_speed
+  examples: |
+    - Diminui a velocidade do vídeo
+    - Baixa a velocidade do vídeo
+    - Reduza a velocidade do vídeo
+    - Diminua a velocidade em [0,5](speed)
+    - Baixa a velocidade em [1,75](speed)
+    - Reduza a velocidade em [1,25](speed)
+    - Por favor diminua a velocidade em [1](speed)
+    - Por favor baixe a velocidade em [2](speed)
+    - Por favor reduza a velocidade em [1,5](speed)
+    - Diminua a velocidade em [0,25](speed), se faz favor
+    - Desacelere a velocidade em [0,5](speed), por favor
+
+
+- intent: alternate_speed
+  examples: |
+    - Altera a velocidade do vídeo para [1,5](speed)
+    - Altere a velocidade do vídeo para [0,75](speed), por favor
+    - Mude a velocidade do vídeo para [1,75](speed)
+    - Muda a velocidade do vídeo para [1](speed), por favor
+    - Quero a velocidade do vídeo em [2](speed)
+    - Quero a velocidade do vídeo em [0,5](speed), por favor
+    - Por favor altere a velocidade do vídeo para [1,25](speed)
+    - Por favor mude a velocidade do vídeo para [1,75](speed)
+    - Por favor quero a velocidade do vídeo em [1,5](speed)
+
+
+- intent: write_comment
+  examples: |
+     - Escreve [Este vídeo poderia explicar melhor o filme](comment)
+     - Escreva nos comentários [Quero continuação](comment)
+     - Digita [Adorei este vídeo](comment)
+     - Comenta [Gostei muito deste vídeo](comment)
+     - Escreva aí [incrível](comment)
+     - Digite aí [este vídeo é muito bom](comment)
+     - Comente aí [este vídeo está péssimo](comment)
+     - Quero comentar [este vídeo é muito bom](comment)
+     - Quero escrever [este vídeo está péssimo](comment)
+     - Por favor comente [este vídeo está péssimo](comment)
+
+- intent: seek_forward_video
+  examples: |
+    - Avança [10 minutos](time) por favor
+    - Avança [30 segundos](time) no vídeo
+    - Avança [1 hora](time) no vídeo por favor
+    - Avança [2 horas](time)
+    - Anda [3 minutos](time)
+    - Anda [10 segundos](time) por favor
+    - Anda [10 minutos](time) no vídeo
+    - Anda [10 segundos](time) no vídeo por favor
+    
+- intent: seek_backward_video
+  examples: |
+    - Recua [10 segundos](time) por favor
+    - Recua [1 hora](time) no vídeo
+    - Recua [2 horas](time) no vídeo por favor
+    - Recua [30 minutos](time)
+    - Retrocede [1 hora](time)
+    - Retrocede [10 segundos](time) por favor
+    - Retrocede [10 minutos](time) no vídeo
+    - Retrocede [10 segundos](time) no vídeo por favor
+
+- intent: subscribe_channel
+  examples: |
+    - Subscreve o canal
+    - Subscreva-me a este  canal
+    - Inscreva-me neste canal
+    - Subscreve
+    - Quero subscrever-me a este canal
+    - Quero inscrever-me neste canal
+    - Quero subscrever
+    - Quero inscrever-me
+    - Quero seguir este canal
+    - Siga este canal
+
+- intent: unsubscribe_channel
+  examples: |
+    - Desinscreve o canal
+    - Desinscreva-me a este  canal
+    - Desinscreva-me neste canal
+    - Desinscreve
+    - Quero desinscrever-me a este canal
+    - Quero desinscrever-me neste canal
+    - Quero desinscrever
+    - Quero deixar de seguir este canal
+    - Deixe de seguir este canal
+    - Anule a subscrição
+    - Anule a subscrição deste canal
+    - Cancela a subscrição
+    - Cancela a subscrição deste canal
+
+- intent: share_video
+  examples: |
+    - Partilha este vídeo com o [Madeirense](user)
+    - Envie este vídeo para o [Nuno](user)
+    - Reencaminhe este vídeo para o [Cunha](user)
+    - Comparti-lhe o vídeo com  a [Susana](user)
+    - Manda este vídeo para o [Carlos](user)
+    - Mostra este vídeo ao [Joaquim](user)
+    - Quero partilhar este vídeo com o [Artur](user)
+    - Quero enviar este vídeo para a [Sofia](user)
+    - Por favor manda este vídeo para o [Miguel](user)
+    - Por favor reencaminhe este vídeo para a [Ana](user)
+    - Por favor envie este vídeo para o [António](user)
+
+- intent: save_to_playlist
+  examples: |
+   - Guarda este vídeo na playlist [Bangers](playlist)
+   - Guarde este vídeo na playlist [Favoritos](playlist), por favor
+   - Quero guardar na playlist [Assistir mais tarde](playlist)
+   - Adiciona a música à playlist [Depressed Songs](playlist)
+   - Adicione o vídeo à playlist [destinos de viagem](playlist)
+   - Coloque este vídeo na playlist [restaurantes portugueses](playlist)
+   - Coloca esta música na playlist [músicas de verão](playlist)
+   - Por favor adicione o vídeo á playlist [Unity Tutorials](playlist)
+   - Por favor coloque a música na playlist [Músicas de Natal](playlist)
+   - Guarda este vídeo na playlist [prime youtube](playlist), se faz favor 
+   - Adicione esta música à playlist [músicas de relaxamento](playlist), se faz favor
+
+
+- intent: activate_notifications
+  examples: |
+    - Ativa as notificações
+    - Ativa as notificações do canal
+    - Ativa as notificações por favor
+    - Ativa as notificações do canal por favor
+    - Ativa as notificações do canal, por favor
+    - Ativa as notificações, por favor
+    - Liga as notificações
+    - Liga as notificações do canal
+    - Liga as notificações por favor
+    - Liga as notificações do canal por favor
+    - Liga as notificações do canal, por favor
+    - Liga as notificações, por favor
+    - Quero as notificações
+    - Preciso das notificações por favor
+    
+- intent: mantain_notifications
+  examples: |
+    - Mantém as notificações
+    - Mantenha
+    - Não altere
+    - Não mude
+    - Não faça nehuma alteração
+    - Quero manter as notificações
+
+- intent: desactivate_notifications
+  examples: |
+    - Desativa as notificações
+    - Desativa as notificações do canal
+    - Desativa as notificações por favor
+    - Desativa as notificações do canal por favor
+    - Quero desativar as notificações
+    - Desliga as notificações
+    - Quero desligar as notificações
+
+- intent: volumeu
+  examples: |
+    - Aumenta o volume
+    - Aumenta um [pouco](volume_value) o volume
+    - Aumenta o volume por favor
+    - AUmenta o volume para o [máximo](volume_value) por favor
+    - Aumenta o som
+    - Aumenta [uma beca](volume_value) o som
+    - Aumenta o som por favor
+    - Aumenta [mais um pouco](volume_value) o som por favor
+    - Aumenta o volume do vídeo
+    - Aumenta o volume do vídeo para o [máximo](volume_value)
+    - Aumenta o volume do vídeo por favor
+    - Aumenta [um bocado](volume_value) o volume do vídeo
+    - Aumenta o som do vídeo
+    - Aumenta [uma beca](volume_value) o som do vídeo
+    - Aumenta o som do vídeo por favor
+    - Aumenta [mais um pouco](volume_value) o som do vídeo por favor
+    - Aumenta o volume, por favor
+    - Aumenta o volume para o [máximo](volume_value), por favor
+    - Aumenta o som, por favor
+    - Aumenta [uma beca](volume_value) o som, por favor
+    - Aumenta o volume do vídeo, por favor
+    - Aumenta o volume do vídeo para o [máximo](volume_value), por favor
+    - Aumenta o som do vídeo, por favor
+    - Aumenta [uma beca](volume_value) o som do vídeo, por favor
+    - Aumenta mais um bocado o volume
+
+
+- intent: volumed
+  examples: |
+    - Diminui o volume
+    - Diminui um [pouco](volume_value) o volume
+    - Diminui o volume por favor
+    - Diminui o volume para o [mínimo](volume_value) por favor
+    - Diminui o som
+    - Diminui [uma beca](volume_value) o som
+    - Diminui o som por favor
+    - Diminui [mais um pouco](volume_value) o som por favor
+    - Diminui o volume do vídeo
+    - Diminui o volume do vídeo para o [mínimo](volume_value)
+    - Diminui o volume do vídeo por favor
+    - Diminui [um bocado](volume_value) o volume do vídeo
+    - Diminui o som do vídeo
+    - Diminui [uma beca](volume_value) o som do vídeo
+    - Diminui o som do vídeo por favor
+    - Diminui [mais um pouco](volume_value) o som do vídeo por favor
+    - Diminui o volume, por favor
+    - Diminui o volume para o [mínimo](volume_value), por favor
+    - Diminui o som, por favor
+    - Diminui [uma beca](volume_value) o som, por favor
+    - Diminui o volume do vídeo, por favor
+    - Diminui o volume do vídeo para o [mínimo](volume_value), por favor
+    - Diminui o som do vídeo, por favor
+    - Diminui [uma beca](volume_value) o som do vídeo, por favor
+
+- intent: fulls
+  examples: |
+    - Ecrã inteiro
+    - Ecrã inteiro por favor
+    - Ecrã cheio
+    - Ecrã cheio por favor
+    - Ecrã completo
+    - Ecrã completo por favor
+    - Ecrã total
+    - Ecrã total por favor
+    - Ecrã inteiro do vídeo
+    - Ecrã inteiro do vídeo por favor
+    - Ecrã cheio do vídeo
+    - Ecrã cheio do vídeo por favor
+    - Ecrã completo do vídeo
+    - Ecrã completo do vídeo por favor
+    - Ecrã total do vídeo
+    - Ecrã total do vídeo por favor
+    - Mete em tela cheia
+
+- intent: normals
+  examples: |
+    - Ecrã normal
+    - Ecrã normal por favor
+    - Ecrã normal do vídeo
+    - Ecrã normal do vídeo por favor
+    - Ecrã normal, por favor
+    - Ecrã normal do vídeo, por favor
+    - Mete em tela normal
+
+- intent: slideup
+  examples: |
+    - Desliza para cima
+    - Desliza [um pouco](scroll_value) para cima
+    - Desliza para cima por favor 
+    - Desliza [mais um bocado](scroll_value) para cima por favor
+    - Desliza [um pouco](scroll_value) para cima do vídeo
+    - Desliza para cima do vídeo
+    - Desliza para cima do vídeo por favor
+    - Desliza [mais um bocado](scroll_value) para cima do vídeo por favor
+    - Desliza para cima, por favor
+    - Desliza [um pouco](scroll_value) para cima, por favor
+    - Desliza para cima do vídeo, por favor
+    - Dá scroll para cima
+
+
+- intent: slided
+  examples: |
+    - Desliza para baixo
+    - Desliza para baixo [um pouco](scroll_value)
+    - Desliza para baixo por favor
+    - Deslica para baixo [mais um pouco](scroll_value) por favor
+    - Desliza para baixo do vídeo
+    - Desliza para baixo do vídeo [mais um bocado](scroll_value)
+    - Desliza para baixo do vídeo por favor
+    - Desliza para baixo do vídeo [um pouco](scroll_value) por favor
+    - Desliza para baixo, por favor
+    - Desliza para baixo [um pouco](scroll_value), por favor
+    - Desliza para baixo do vídeo, por favor
+    - Desliza para baixo do vídeo [mais um pouco](scroll_value), por favor
+    - Dá scroll para baixo
+
+- intent: help
+  examples: |
+    - Ajuda
+    - Preciso de ajuda
+    - Ajuda-me
+    - Pode me ajudar
+    - Ajuda-me por favor
+    - Preciso de ajuda por favor
+    - Por favor ajuda-me
+    - Mostra me os comandos
+    - Quais são os comandos
+    - Quais são os comandos disponíveis
+    - Mostra-me as suas funcionalidades
+    - Quais são as suas funcionalidades
+
+- intent: choose_help_options
+  examples: |
+    - [voz](help_options)
+    - [gestos](help_options))
+    - [fusão](help_options))
+    - [todos](help_options))
+    - [nehumm](help_options))
+    - comandos de [gestos](help_options))
+    - funcionalidades de [voz](help_options))
+    - Quero saber mais sobre [fusão e voz](help_options))
+    - Quero ajuda na [voz e gestos](help_options))
+    - Quero ajuda com os [gestos](help_options))
+    - Não quero em [nenhum](help_options))

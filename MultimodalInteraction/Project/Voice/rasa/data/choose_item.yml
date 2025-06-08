@@ -1,0 +1,11 @@
+version: "3.1"
+nlu:
+- lookup: choose_item
+  examples: |
+    - primeiro
+    - 1º
+    - Selecionar o primeiro
+    - segundo
+    - 2º
+    - terceiro
+    - 3º

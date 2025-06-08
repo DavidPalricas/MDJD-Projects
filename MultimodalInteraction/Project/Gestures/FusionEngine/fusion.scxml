@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" xmlns:commons="http://commons.apache.org/scxml" xmlns:emma="http://www.w3.org/2003/04/emma" xmlns:mmi="http://www.w3.org/2008/04/mmi-arch" xmlns:schemaLocation="http://www.w3.org/2005/07/scxml scxml.xsd http://commons.apache.org/scxml commons.xsd http://www.w3.org/2008/04/mmi-arch mmi.xsd http://www.w3.org/2003/04/emma emma.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" initialstate="init">
+  <datamodel>
+    <data name="data1" />
+    <data name="data2" />
+  </datamodel>
+  <state id="init">
+    <onentry>
+      <log label="[init]" expr="READY" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="main">
+    <onentry>
+      <log label="[main]" expr="READY" />
+    </onentry>
+    <transition target="sspeech[speech][change_color][laranja]" event="[SPEECH][CHANGE_COLOR][LARANJA]" />
+    <transition target="sspeech[speech][change_color][azul]" event="[SPEECH][CHANGE_COLOR][AZUL]" />
+    <transition target="sspeech[speech][change_color][preto]" event="[SPEECH][CHANGE_COLOR][PRETO]" />
+    <transition target="sspeech[speech][change_color][cinzento]" event="[SPEECH][CHANGE_COLOR][CINZENTO]" />
+    <transition target="sspeech[speech][change_color][branc]" event="[SPEECH][CHANGE_COLOR][BRANC]" />
+    <transition target="sspeech[speech][change_color][amarelo]" event="[SPEECH][CHANGE_COLOR][AMARELO]" />
+    <transition target="sspeech[speech][change_color][rosa]" event="[SPEECH][CHANGE_COLOR][ROSA]" />
+    <transition target="sspeech[speech][change_color][verde]" event="[SPEECH][CHANGE_COLOR][VERDE]" />
+    <transition target="sspeech[speech][change_color][vermelho]" event="[SPEECH][CHANGE_COLOR][VERMELHO]" />
+  </state>
+  <state id="sspeech[speech][change_color][laranja]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][laranja]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][laranja]" event="timeout-sspeech[speech][change_color][laranja]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][laranja]" />
+    <transition target="sspeech[speech][change_color][laranja]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][laranja]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][laranja]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][laranja]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][laranja]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][laranja]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][LARANJA]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_LARANJA" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][laranja]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][laranja]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][LARANJA]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_LARANJA" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][laranja]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][laranja]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][LARANJA]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_LARANJA" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][azul]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][azul]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][azul]" event="timeout-sspeech[speech][change_color][azul]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][azul]" />
+    <transition target="sspeech[speech][change_color][azul]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][azul]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][azul]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][azul]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][azul]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][azul]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][AZUL]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_AZUL" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][azul]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][azul]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][AZUL]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_AZUL" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][azul]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][azul]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][AZUL]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_AZUL" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][preto]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][preto]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][preto]" event="timeout-sspeech[speech][change_color][preto]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][preto]" />
+    <transition target="sspeech[speech][change_color][preto]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][preto]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][preto]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][preto]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][preto]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][preto]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][PRETO]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_PRETO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][preto]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][preto]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][PRETO]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_PRETO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][preto]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][preto]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][PRETO]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_PRETO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][cinzento]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][cinzento]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][cinzento]" event="timeout-sspeech[speech][change_color][cinzento]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][cinzento]" />
+    <transition target="sspeech[speech][change_color][cinzento]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][cinzento]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][cinzento]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][cinzento]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][cinzento]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][cinzento]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][CINZENTO]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_CINZENTO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][cinzento]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][cinzento]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][CINZENTO]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_CINZENTO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][cinzento]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][cinzento]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][CINZENTO]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_CINZENTO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][branc]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][branc]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][branc]" event="timeout-sspeech[speech][change_color][branc]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][branc]" />
+    <transition target="sspeech[speech][change_color][branc]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][branc]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][branc]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][branc]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][branc]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][branc]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][BRANCO]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_BRANCO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][branc]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][branc]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][BRANCO]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_BRANCO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][branc]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][branc]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][BRANCO]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_BRANCO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][amarelo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][amarelo]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][amarelo]" event="timeout-sspeech[speech][change_color][amarelo]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][amarelo]" />
+    <transition target="sspeech[speech][change_color][amarelo]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][amarelo]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][amarelo]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][amarelo]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][amarelo]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][amarelo]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][AMARELO]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_AMARELO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][amarelo]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][amarelo]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][AMARELO]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_AMARELO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][amarelo]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][amarelo]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][AMARELO]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_AMARELO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][rosa]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][rosa]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][rosa]" event="timeout-sspeech[speech][change_color][rosa]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][rosa]" />
+    <transition target="sspeech[speech][change_color][rosa]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][rosa]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][rosa]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][rosa]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][rosa]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][rosa]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][ROSA]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_ROSA" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][rosa]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][rosa]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][ROSA]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_ROSA" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][rosa]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][rosa]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][ROSA]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_ROSA" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][verde]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][verde]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][verde]" event="timeout-sspeech[speech][change_color][verde]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][verde]" />
+    <transition target="sspeech[speech][change_color][verde]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][verde]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][verde]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][verde]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][verde]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][verde]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][VERDE]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_VERDE" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][verde]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][verde]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][VERDE]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_VERDE" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][verde]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][verde]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][VERDE]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_VERDE" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][vermelho]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][vermelho]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[speech][change_color][vermelho]" event="timeout-sspeech[speech][change_color][vermelho]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-sspeech[speech][change_color][vermelho]" />
+    <transition target="sspeech[speech][change_color][vermelho]-touch[touch][shape][triangulo]" event="[TOUCH][SHAPE][TRIANGULO]" />
+    <transition target="sspeech[speech][change_color][vermelho]-touch[touch][shape][quadrado]" event="[TOUCH][SHAPE][QUADRADO]" />
+    <transition target="sspeech[speech][change_color][vermelho]-touch[touch][shape][circulo]" event="[TOUCH][SHAPE][CIRCULO]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[speech][change_color][vermelho]" />
+    </onexit>
+  </state>
+  <state id="sspeech[speech][change_color][vermelho]-touch[touch][shape][triangulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][vermelho]-touch[touch][shape][triangulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][TRIANGULO][VERMELHO]')}" />
+      <send event="CHANGE_COLOR_TRIANGULO_VERMELHO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][vermelho]-touch[touch][shape][quadrado]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][vermelho]-touch[touch][shape][quadrado]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][QUADRADO][VERMELHO]')}" />
+      <send event="CHANGE_COLOR_QUADRADO_VERMELHO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[speech][change_color][vermelho]-touch[touch][shape][circulo]">
+    <onentry>
+      <log label="[sspeech[speech][change_color][vermelho]-touch[touch][shape][circulo]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="startRequest" expr="${mmi:newStartRequestF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[FUSION][CHANGE_COLOR][CIRCULO][VERMELHO]')}" />
+      <send event="CHANGE_COLOR_CIRCULO_VERMELHO" target="IM" targettype="MC" namelist="startRequest" />
+    </onentry>
+    <transition target="main" />
+  </state>
+</scxml>
