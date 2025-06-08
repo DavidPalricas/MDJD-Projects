@@ -190,5 +190,5 @@ pip install -r requirements.txt
 
 
 ## Contributors
-**David Palricas** Student ID 108780
-**Henrique Coelho** Student ID 108342
+* **David Palricas** Student ID 108780
+* **Henrique Coelho** Student ID 108342
